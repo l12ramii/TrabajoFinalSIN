@@ -34,7 +34,7 @@
     <Component class="javax.swing.JLabel" name="logoPolicia">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Segoe UI" size="14" style="0"/>
+          <Font name="Segoe UI" size="18" style="0"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/images/policia-logo-1.png"/>
@@ -52,7 +52,7 @@
     <Component class="javax.swing.JLabel" name="textoMinisterio">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Segoe UI" size="14" style="0"/>
+          <Font name="Segoe UI" size="18" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;center&gt;&lt;font color=&apos;#003399&apos;&gt;&lt;b&gt;MINISTERIO DEL INTERIOR. Direcci&#xf3;n General de la Polic&#xed;a.&lt;/b&gt;&lt;br&gt;Cuerpo Nacional de Polic&#xed;a.&lt;/font&gt;&lt;/center&gt;&lt;/html&gt;"/>
       </Properties>
@@ -65,9 +65,9 @@
     <Component class="javax.swing.JLabel" name="enlaces">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Segoe UI" size="14" style="0"/>
+          <Font name="Segoe UI" size="18" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;font face=&quot;Arial&quot; size=&quot;3&quot; color=&quot;#003399&quot;&gt;&#xa;&lt;b&gt;Privacidad &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; Cookies &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; Mapa Web&lt;/b&gt;&#xa;&lt;/font&gt;&lt;/html&gt;"/>
+        <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;font face=&quot;Arial&quot; color=&quot;#003399&quot;&gt;&#xa;&lt;b&gt;Privacidad &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; Cookies &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; Mapa Web&lt;/b&gt;&#xa;&lt;/font&gt;&lt;/html&gt;"/>
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
           <Color id="Cursor de Mano"/>
         </Property>
@@ -81,9 +81,9 @@
     <Component class="javax.swing.JLabel" name="idioma">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Segoe UI" size="14" style="0"/>
+          <Font name="Segoe UI" size="18" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;div style=&apos;text-align: right; font-family: Arial; color: #003399;&apos;&gt;&#xa;&lt;b&gt;EN&lt;/b&gt; [UK]&lt;br&gt;&#xa;&lt;font size=&quot;2&quot; color=&quot;black&quot;&gt;v.20260203&lt;/font&gt;&#xa;&lt;/div&gt;&lt;/html&gt;"/>
+        <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;div style=&apos;text-align: right; font-family: Arial; color: #003399;&apos;&gt;&#xa;&lt;b&gt;EN&lt;/b&gt; [UK]&#xa;&lt;/div&gt;&lt;/html&gt;"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">

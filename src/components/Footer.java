@@ -4,8 +4,8 @@
  */
 package components;
 
-import java.awt.Image;
-import javax.swing.ImageIcon;
+import utils.Utils;
+
 /**
  *
  * @author aramo
@@ -19,11 +19,7 @@ public class Footer extends javax.swing.JPanel {
         initComponents();
 
         // redimension del escudo
-        if (logoPolicia.getIcon() != null) {
-            Image imgOriginal = ((ImageIcon) logoPolicia.getIcon()).getImage();
-            Image imgEscalada = imgOriginal.getScaledInstance(60, 82, Image.SCALE_SMOOTH);
-            logoPolicia.setIcon(new ImageIcon(imgEscalada));
-        }
+        logoPolicia.setIcon(Utils.getScaledIcon("/images/policia-logo-1.png", 60));
     }
 
     /**
@@ -46,7 +42,7 @@ public class Footer extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(1200, 85));
         setLayout(new java.awt.GridBagLayout());
 
-        logoPolicia.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        logoPolicia.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         logoPolicia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/policia-logo-1.png"))); // NOI18N
         logoPolicia.setMaximumSize(new java.awt.Dimension(50, 60));
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -55,23 +51,23 @@ public class Footer extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(0, 20, 0, 10);
         add(logoPolicia, gridBagConstraints);
 
-        textoMinisterio.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        textoMinisterio.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         textoMinisterio.setText("<html><center><font color='#003399'><b>MINISTERIO DEL INTERIOR. Dirección General de la Policía.</b><br>Cuerpo Nacional de Policía.</font></center></html>");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.weightx = 1.0;
         add(textoMinisterio, gridBagConstraints);
 
-        enlaces.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        enlaces.setText("<html><font face=\"Arial\" size=\"3\" color=\"#003399\">\n<b>Privacidad &nbsp;&nbsp;&nbsp;&nbsp; Cookies &nbsp;&nbsp;&nbsp;&nbsp; Mapa Web</b>\n</font></html>");
+        enlaces.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        enlaces.setText("<html><font face=\"Arial\" color=\"#003399\">\n<b>Privacidad &nbsp;&nbsp;&nbsp;&nbsp; Cookies &nbsp;&nbsp;&nbsp;&nbsp; Mapa Web</b>\n</font></html>");
         enlaces.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.weightx = 0.5;
         add(enlaces, gridBagConstraints);
 
-        idioma.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        idioma.setText("<html><div style='text-align: right; font-family: Arial; color: #003399;'>\n<b>EN</b> [UK]<br>\n<font size=\"2\" color=\"black\">v.20260203</font>\n</div></html>");
+        idioma.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        idioma.setText("<html><div style='text-align: right; font-family: Arial; color: #003399;'>\n<b>EN</b> [UK]\n</div></html>");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 3;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;

@@ -4,6 +4,10 @@
  */
 package components;
 
+import controllers.PageController;
+import javax.swing.JPanel;
+import utils.Utils;
+
 /**
  *
  * @author aramo
@@ -15,6 +19,7 @@ public class Header extends javax.swing.JPanel {
      */
     public Header() {
         initComponents();
+        iconoPolicia.setIcon(Utils.getScaledIcon("/images/policia-log-2.png", 275));
     }
 
     /**
@@ -25,101 +30,97 @@ public class Header extends javax.swing.JPanel {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
 
-        jPanel1 = new javax.swing.JPanel();
-        label2 = new java.awt.Label();
-        label6 = new java.awt.Label();
-        label8 = new java.awt.Label();
-        label7 = new java.awt.Label();
-        label9 = new java.awt.Label();
-        jLabel1 = new javax.swing.JLabel();
+        iconoPolicia = new javax.swing.JLabel();
+        inicio = new javax.swing.JLabel();
+        ayuda = new javax.swing.JLabel();
+        contacto = new javax.swing.JLabel();
+        tuOpinion = new javax.swing.JLabel();
+        idioma = new javax.swing.JLabel();
 
-        jPanel1.setBackground(new java.awt.Color(0, 51, 132));
-        jPanel1.setPreferredSize(new java.awt.Dimension(1440, 88));
+        setBackground(new java.awt.Color(0, 53, 134));
+        setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
+        setForeground(new java.awt.Color(255, 255, 255));
+        setLayout(new java.awt.GridBagLayout());
 
-        label2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        label2.setFont(new java.awt.Font("Dialog", 1, 28)); // NOI18N
-        label2.setForeground(new java.awt.Color(255, 255, 255));
-        label2.setText("Inicio");
+        iconoPolicia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/policia-log-2.png"))); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(15, 30, 15, 0);
+        add(iconoPolicia, gridBagConstraints);
 
-        label6.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        label6.setFont(new java.awt.Font("Dialog", 1, 28)); // NOI18N
-        label6.setForeground(new java.awt.Color(255, 255, 255));
-        label6.setText("Mapa web\n");
+        inicio.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        inicio.setForeground(new java.awt.Color(255, 255, 255));
+        inicio.setText("Inicio");
+        inicio.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        inicio.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                inicioMouseClicked(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 20, 0, 20);
+        add(inicio, gridBagConstraints);
 
-        label8.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        label8.setFont(new java.awt.Font("Dialog", 1, 28)); // NOI18N
-        label8.setForeground(new java.awt.Color(255, 255, 255));
-        label8.setText("Ayuda");
+        ayuda.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        ayuda.setForeground(new java.awt.Color(255, 255, 255));
+        ayuda.setText("Ayuda\n");
+        ayuda.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 20, 0, 20);
+        add(ayuda, gridBagConstraints);
 
-        label7.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        label7.setFont(new java.awt.Font("Dialog", 1, 28)); // NOI18N
-        label7.setForeground(new java.awt.Color(255, 255, 255));
-        label7.setText("Aviso legal");
+        contacto.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        contacto.setForeground(new java.awt.Color(255, 255, 255));
+        contacto.setText("Contacto");
+        contacto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 20, 0, 20);
+        add(contacto, gridBagConstraints);
 
-        label9.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        label9.setFont(new java.awt.Font("Dialog", 1, 28)); // NOI18N
-        label9.setForeground(new java.awt.Color(255, 255, 255));
-        label9.setText("Accesibilidad");
+        tuOpinion.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        tuOpinion.setForeground(new java.awt.Color(255, 255, 255));
+        tuOpinion.setText("Tu opinión");
+        tuOpinion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 20, 0, 20);
+        add(tuOpinion, gridBagConstraints);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("/home/adolfo/Imágenes/Captura de pantalla de 2026-05-29 13-49-52.png")); // NOI18N
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
-                .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(66, 66, 66)
-                .addComponent(label8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(105, 105, 105)
-                .addComponent(label7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(108, 108, 108)
-                .addComponent(label9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(100, 100, 100)
-                .addComponent(label6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(95, 95, 95))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(label7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(label9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(label8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(label6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jLabel1)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1440, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 212, Short.MAX_VALUE))
-        );
+        idioma.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        idioma.setForeground(new java.awt.Color(255, 255, 255));
+        idioma.setText("Idioma");
+        idioma.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 5;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 20, 0, 30);
+        add(idioma, gridBagConstraints);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void inicioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inicioMouseClicked
+        JPanel contenedor = (JPanel) this.getParent();
+        PageController control = new PageController(contenedor, PageController.LANDING);
+        control.actionPerformed(null);
+    }//GEN-LAST:event_inicioMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
-    private java.awt.Label label2;
-    private java.awt.Label label6;
-    private java.awt.Label label7;
-    private java.awt.Label label8;
-    private java.awt.Label label9;
+    private javax.swing.JLabel ayuda;
+    private javax.swing.JLabel contacto;
+    private javax.swing.JLabel iconoPolicia;
+    private javax.swing.JLabel idioma;
+    private javax.swing.JLabel inicio;
+    private javax.swing.JLabel tuOpinion;
     // End of variables declaration//GEN-END:variables
 }
