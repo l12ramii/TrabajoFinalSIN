@@ -4,6 +4,8 @@
  */
 package components;
 
+import java.awt.Image;
+import javax.swing.ImageIcon;
 /**
  *
  * @author aramo
@@ -15,6 +17,13 @@ public class Footer extends javax.swing.JPanel {
      */
     public Footer() {
         initComponents();
+
+        // redimension del escudo
+        if (logoPolicia.getIcon() != null) {
+            Image imgOriginal = ((ImageIcon) logoPolicia.getIcon()).getImage();
+            Image imgEscalada = imgOriginal.getScaledInstance(60, 82, Image.SCALE_SMOOTH);
+            logoPolicia.setIcon(new ImageIcon(imgEscalada));
+        }
     }
 
     /**
@@ -25,25 +34,56 @@ public class Footer extends javax.swing.JPanel {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
 
-        jPanel1 = new javax.swing.JPanel();
+        logoPolicia = new javax.swing.JLabel();
+        textoMinisterio = new javax.swing.JLabel();
+        enlaces = new javax.swing.JLabel();
+        idioma = new javax.swing.JLabel();
 
-        jPanel1.setBackground(new java.awt.Color(188, 190, 191));
+        setBackground(java.awt.Color.lightGray);
+        setBorder(javax.swing.BorderFactory.createMatteBorder(1, 0, 0, 0, new java.awt.Color(160, 160, 160)));
+        setPreferredSize(new java.awt.Dimension(1200, 85));
+        setLayout(new java.awt.GridBagLayout());
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        logoPolicia.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        logoPolicia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/policia-logo-1.png"))); // NOI18N
+        logoPolicia.setMaximumSize(new java.awt.Dimension(50, 60));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 20, 0, 10);
+        add(logoPolicia, gridBagConstraints);
+
+        textoMinisterio.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        textoMinisterio.setText("<html><center><font color='#003399'><b>MINISTERIO DEL INTERIOR. Dirección General de la Policía.</b><br>Cuerpo Nacional de Policía.</font></center></html>");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.weightx = 1.0;
+        add(textoMinisterio, gridBagConstraints);
+
+        enlaces.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        enlaces.setText("<html><font face=\"Arial\" size=\"3\" color=\"#003399\">\n<b>Privacidad &nbsp;&nbsp;&nbsp;&nbsp; Cookies &nbsp;&nbsp;&nbsp;&nbsp; Mapa Web</b>\n</font></html>");
+        enlaces.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.weightx = 0.5;
+        add(enlaces, gridBagConstraints);
+
+        idioma.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        idioma.setText("<html><div style='text-align: right; font-family: Arial; color: #003399;'>\n<b>EN</b> [UK]<br>\n<font size=\"2\" color=\"black\">v.20260203</font>\n</div></html>");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 10, 0, 20);
+        add(idioma, gridBagConstraints);
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel enlaces;
+    private javax.swing.JLabel idioma;
+    private javax.swing.JLabel logoPolicia;
+    private javax.swing.JLabel textoMinisterio;
     // End of variables declaration//GEN-END:variables
 }
