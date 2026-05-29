@@ -26,7 +26,7 @@ public class Main extends javax.swing.JFrame {
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         JPanel header = new Header();
         JPanel footer = new Footer();
-        
+        this.setTitle("Cita previa DNI");
         jPanel1.add(header, BorderLayout.NORTH);
         jPanel1.add(footer, BorderLayout.SOUTH);
         
