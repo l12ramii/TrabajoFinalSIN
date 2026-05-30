@@ -5,7 +5,9 @@
 package views;
 
 import controllers.PageController;
+import java.awt.AWTError;
 import java.awt.Color;
+import java.awt.font.TextAttribute;
 import javax.swing.JPanel;
 
 /**
@@ -129,6 +131,12 @@ public class Acceso extends javax.swing.JPanel {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 dniRobadoMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                dniRobadoMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                dniRobadoMouseExited(evt);
+            }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -178,6 +186,14 @@ public class Acceso extends javax.swing.JPanel {
         PageController control = new PageController(contenedor, PageController.FORMDNI_OLVIDADO);
         control.actionPerformed(null);
     }//GEN-LAST:event_dniRobadoMouseClicked
+
+    private void dniRobadoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dniRobadoMouseEntered
+        dniRobado.setForeground(new Color(0, 70, 190));
+    }//GEN-LAST:event_dniRobadoMouseEntered
+
+    private void dniRobadoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dniRobadoMouseExited
+        dniRobado.setForeground(new Color(0, 51, 132));
+    }//GEN-LAST:event_dniRobadoMouseExited
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

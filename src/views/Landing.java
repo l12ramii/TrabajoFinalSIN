@@ -6,7 +6,6 @@ package views;
 
 import controllers.PageController;
 import java.awt.Color;
-import javax.swing.JFrame;
 import javax.swing.JPanel;
 import utils.Utils;
 

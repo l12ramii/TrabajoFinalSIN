@@ -12,6 +12,9 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.SwingUtilities;
 import views.Acceso;
+import views.FormDNI;
+import views.FormDNIOlvidado;
+import views.FormNIE;
 import views.Landing;
 
 /**
@@ -30,6 +33,7 @@ public class PageController implements ActionListener {
     public static final int AYUDA = 6;
     public static final int CONTACTO = 7;
     public static final int TU_OPINION = 8;
+    public static final int TODO_OK = 9;
     
     
     public PageController(JPanel container, int viewTarget) {
@@ -52,6 +56,9 @@ public class PageController implements ActionListener {
         newPanel = switch (viewTarget) {
             case LANDING -> Landing.getInstance();
             case ACCESO -> Acceso.getInstance();
+            case FORMDNI -> FormDNI.getInstance();
+            case FORMNIE -> FormNIE.getInstance();
+            case FORMDNI_OLVIDADO -> FormDNIOlvidado.getInstance();
                 //case 3 -> PanelCita.getInstance();
             default -> Landing.getInstance();
         };
