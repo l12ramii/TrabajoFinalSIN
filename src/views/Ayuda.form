@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <Properties>
+    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+    </Property>
+    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+    </Property>
+  </Properties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="3"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,3,-71,0,0,7,111"/>
+  </AuxValues>
+
+  <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout"/>
+  <SubComponents>
+    <Container class="javax.swing.JPanel" name="centralPanel">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="f7" green="f0" red="e7" type="rgb"/>
+        </Property>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+            <LineBorder roundedCorners="true" thickness="2">
+              <Color PropertyName="color" blue="e5" green="d1" red="b8" type="rgb"/>
+            </LineBorder>
+          </Border>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
+      </Properties>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">
+          <GridBagConstraints gridX="-1" gridY="-1" gridWidth="1" gridHeight="1" fill="0" ipadX="0" ipadY="0" insetsTop="50" insetsLeft="50" insetsBottom="50" insetsRight="50" anchor="10" weightX="1.0" weightY="1.0"/>
+        </Constraint>
+      </Constraints>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="title">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Arial" size="24" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" red="0" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Ayuda"/>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">
+              <GridBagConstraints gridX="0" gridY="0" gridWidth="2" gridHeight="1" fill="0" ipadX="0" ipadY="0" insetsTop="20" insetsLeft="0" insetsBottom="30" insetsRight="0" anchor="10" weightX="0.0" weightY="0.0"/>
+            </Constraint>
+          </Constraints>
+        </Component>
+        <Component class="javax.swing.JLabel" name="textoIzq">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Arial" size="14" style="0"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" red="0" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="&lt;html&gt;&#xa;&lt;div style=&apos;width: 480px; text-align: justified; font-family: Arial; color: #000000; line-height: 1.4;&apos;&gt;&#xa;  &#xa;  &lt;b style=&apos;color: #003384; font-size: 15px;&apos;&gt; 1. El primer paso: Iniciar el tr&#xe1;mite&lt;/b&gt;&lt;br&gt;&#xa;  Para comenzar cualquier gesti&#xf3;n, lo primero que debes hacer es pulsar el bot&#xf3;n &quot;Iniciar tr&#xe1;mite&quot; que encontrar&#xe1;s en la pantalla principal. Esto te llevar&#xe1; a la zona segura de identificaci&#xf3;n.&lt;br&gt;&lt;br&gt;&#xa;&#xa;  &lt;b style=&apos;color: #003384; font-size: 15px;&apos;&gt; 2. &#xbf;C&#xf3;mo puedo acceder al sistema?&lt;/b&gt;&lt;br&gt;&#xa;  Una vez dentro, el sistema te ofrecer&#xe1; tres opciones para identificarte seg&#xfa;n tu situaci&#xf3;n actual. Elige la que te corresponda:&lt;br&gt;&lt;br&gt;&#xa;&#xa;  &lt;div style=&apos;margin-left: 15px;&apos;&gt;&#xa;    &lt;b&gt;&#x2022; Opci&#xf3;n A: Acceso con DNI&lt;/b&gt;&lt;br&gt;&#xa;    &lt;i&gt;Usa esta opci&#xf3;n si eres ciudadano espa&#xf1;ol y tienes tu documento a mano.&lt;/i&gt;&lt;br&gt;&#xa;    Deber&#xe1;s introducir el n&#xfa;mero de tu DNI (con la letra), su fecha de validez y el c&#xf3;digo del Equipo de Expedici&#xf3;n (los datos que aparecen en la tarjeta f&#xed;sica).&lt;br&gt;&lt;br&gt;&#xa;&#xa;    &lt;b&gt;&#x2022; Opci&#xf3;n B: Acceso con NIE&lt;/b&gt;&lt;br&gt;&#xa;    &lt;i&gt;Usa esta opci&#xf3;n si eres extranjero residente en Espa&#xf1;a.&lt;/i&gt;&lt;br&gt;&#xa;    Deber&#xe1;s introducir tu n&#xfa;mero de NIE (que empieza por X, Y o Z) junto con el &quot;N&#xfa;mero de soporte&quot; que aparece en tu tarjeta de residencia verde o f&#xed;sica.&lt;br&gt;&lt;br&gt;&#xa;&#xa;    &lt;b&gt;&#x2022; Opci&#xf3;n C: &#xbf;Has perdido o te han robado el documento?&lt;/b&gt;&lt;br&gt;&#xa;    &lt;i&gt;Si no dispones de los datos anteriores porque has perdido tu DNI o tu NIE (o si te lo han sustra&#xed;do), selecciona el enlace de &quot;P&#xe9;rdida o sustracci&#xf3;n de documento&quot;.&lt;/i&gt;&lt;br&gt;&#xa;    El sistema te pedir&#xe1; unos datos personales b&#xe1;sicos para verificar tu identidad y te permitir&#xe1; continuar con el tr&#xe1;mite para poder obtener un duplicado o renovaci&#xf3;n.&#xa;  &lt;/div&gt;&#xa;&#xa;&lt;/div&gt;&#xa;&lt;/html&gt;"/>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">
+              <GridBagConstraints gridX="0" gridY="1" gridWidth="1" gridHeight="1" fill="0" ipadX="0" ipadY="0" insetsTop="0" insetsLeft="40" insetsBottom="0" insetsRight="20" anchor="17" weightX="0.0" weightY="0.0"/>
+            </Constraint>
+          </Constraints>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel1">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="f7" green="f0" red="e7" type="rgb"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="f7" green="f0" red="e7" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="jLabel1"/>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">
+              <GridBagConstraints gridX="-1" gridY="2" gridWidth="1" gridHeight="1" fill="0" ipadX="0" ipadY="0" insetsTop="0" insetsLeft="0" insetsBottom="0" insetsRight="0" anchor="10" weightX="0.0" weightY="0.0"/>
+            </Constraint>
+          </Constraints>
+        </Component>
+      </SubComponents>
+    </Container>
+  </SubComponents>
+</Form>
