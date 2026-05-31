@@ -80,7 +80,7 @@ src/
 │   ├── Main.java
 │   └── resources/
 │
-├── resources/               # Internacionalización (i18n)
+├── resources/               # Internacionalización
 │   ├── Bundle_ca_ES.properties
 │   ├── Bundle_en_GB.properties
 │   └── Bundle_es_ES.properties
