@@ -6,7 +6,6 @@ package views;
 
 import java.awt.Color;
 import java.util.ResourceBundle;
-import javax.swing.JFileChooser;
 
 /**
  *

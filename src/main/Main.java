@@ -5,7 +5,6 @@ import components.Header;
 import java.awt.BorderLayout;
 import java.util.Locale;
 import java.util.ResourceBundle;
-import javax.swing.JFrame;
 import javax.swing.JPanel;
 import views.Acceso;
 import views.Ayuda;
@@ -34,11 +33,7 @@ public class Main extends javax.swing.JFrame {
      * Creates new form Main
      */
     public Main() {
-        // 1. Inicializar localización (Detecta el idioma del sistema automáticamente) [cite: 8, 47]
         currentLocale = Locale.getDefault();
-        // Si quieres forzar español al inicio, usa: currentLocale = Locale.of("es", "ES"); [cite: 51]
-
-        // 2. Cargar el bundle (Asegúrate de que tus archivos se llamen Bundle_es_ES.properties, etc.) [cite: 14, 59]
         bundle = ResourceBundle.getBundle("resources.Bundle", currentLocale);
 
         initComponents();
@@ -48,17 +43,13 @@ public class Main extends javax.swing.JFrame {
 
         this.setExtendedState(javax.swing.JFrame.MAXIMIZED_BOTH);
         jScrollPane1.getVerticalScrollBar().setUnitIncrement(20);
-
-        // 3. Pasar el bundle a los componentes si es necesario
-        // Nota: Es recomendable que Header tenga un método para recibir el bundle
         JPanel header = Header.getInstance(this);
         JPanel footer = Footer.getInstance();
         JPanel center = Landing.getInstance();
 
-        // 4. Aplicar título internacionalizado
         this.setTitle(bundle.getString("TITULO"));
 
-        jPanel1.setLayout(new BorderLayout()); // Aseguramos el layout
+        jPanel1.setLayout(new BorderLayout());
         jPanel1.add(header, BorderLayout.NORTH);
         jPanel1.add(footer, BorderLayout.SOUTH);
         jPanel1.add(center, BorderLayout.CENTER);
@@ -69,17 +60,12 @@ public class Main extends javax.swing.JFrame {
     }
 
     public void cambiarIdioma(String lenguaje, String pais) {
-        // 1. Definir la nueva localización [cite: 51]
         this.currentLocale = Locale.of(lenguaje, pais);
 
-        // 2. Cargar el bundle correspondiente [cite: 66]
-        // "resources.Bundle" es la ruta al archivo (sin _es_ES.properties)
         bundle = ResourceBundle.getBundle("resources.Bundle", currentLocale);
 
-        // 3. Actualizar los componentes del propio Main
         this.setTitle(bundle.getString("TITULO"));
 
-        // 4. Avisar a los paneles (Header, Landing, etc.)
         Header.getInstance(this).actualizarTextos(bundle);
         Landing.getInstance().actualizarTextos(bundle);
         FormDNI.getInstance().actualizarTextos(bundle);
@@ -91,7 +77,6 @@ public class Main extends javax.swing.JFrame {
         TuOpinion.getInstance().actualizarTextos(bundle);
         Contacto.getInstance().actualizarTextos(bundle);
 
-        // Forzar el refresco visual
         this.revalidate();
         this.repaint();
     }

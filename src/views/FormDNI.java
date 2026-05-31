@@ -31,8 +31,6 @@ import javax.swing.border.LineBorder;
 public class FormDNI extends javax.swing.JPanel implements Internationalization {
 
     private static FormDNI instance;
-
-    // Componentes del Formulario
     private JTextField txtDNI, txtSoporte, txtExpedicion, txtTelefono;
     private JComboBox<String> comboHora, comboMin;
     private JButton btnEnviar;
@@ -45,7 +43,6 @@ public class FormDNI extends javax.swing.JPanel implements Internationalization 
             lblVal,
             lblTelefono,
             lblCita,
-            lblDia,
             lblHora;
 
     /**
@@ -78,7 +75,6 @@ public class FormDNI extends javax.swing.JPanel implements Internationalization 
         gbc.insets = new Insets(20, 0, 25, 0);
         card.add(lblTitulo, gbc);
 
-        // Reset para los campos (Márgenes compactos)
         gbc.gridwidth = 1;
         gbc.insets = new Insets(4, 15, 4, 15);
 
@@ -113,7 +109,7 @@ public class FormDNI extends javax.swing.JPanel implements Internationalization 
         gbc.gridx = 1;
         card.add(txtExpedicion, gbc);
 
-        // Fila 4: Fecha Validez (AJUSTE DE MARGEN)
+        // Fila 4: Fecha Validez
         gbc.gridy = 4;
         gbc.gridx = 0;
         lblVal = new JLabel("Fecha Validez DNI:");
@@ -122,16 +118,16 @@ public class FormDNI extends javax.swing.JPanel implements Internationalization 
 
         dateChooser = new JDateChooser(null, null, null, null);
         dateChooser.setDateFormatString("dd/MM/yyyy");
-        dateChooser.setPreferredSize(new Dimension(180, 26)); // Altura reducida
+        dateChooser.setPreferredSize(new Dimension(180, 26));
         dateChooser.setBorder(BorderFactory.createLineBorder(colorBordeBusca, 1));
         gbc.gridx = 1;
-        gbc.insets = new Insets(2, 15, 2, 15); // Insets mínimos
+        gbc.insets = new Insets(2, 15, 2, 15);
         card.add(dateChooser, gbc);
 
         // Fila 5: Teléfono
         gbc.gridy = 5;
         gbc.gridx = 0;
-        gbc.insets = new Insets(4, 15, 4, 15); // Volvemos al margen normal
+        gbc.insets = new Insets(4, 15, 4, 15);
         lblTelefono = new JLabel("Teléfono móvil:");
         lblTelefono.setFont(fuenteLabels);
         card.add(lblTelefono, gbc);
@@ -139,7 +135,7 @@ public class FormDNI extends javax.swing.JPanel implements Internationalization 
         gbc.gridx = 1;
         card.add(txtTelefono, gbc);
 
-        // Fila 6: Fecha Cita (AJUSTE DE MARGEN)
+        // Fila 6: Fecha Cita
         gbc.gridy = 6;
         gbc.gridx = 0;
         lblCita = new JLabel("Día de la Cita:");
@@ -216,7 +212,6 @@ public class FormDNI extends javax.swing.JPanel implements Internationalization 
             }
         });
 
-        // Cambiamos a la fila 8 para que no se solape con la hora (fila 7)
         gbc.gridy = 8;
         gbc.gridx = 0;
         gbc.gridwidth = 3;
@@ -264,7 +259,7 @@ public class FormDNI extends javax.swing.JPanel implements Internationalization 
                 restablecerEstilo(txtDNI);
             }
 
-            // 2. Validar Soporte
+           
             if (txtSoporte.getText().trim().length() < 6) {
                 errores.append(bundle.getString("ERR_SOPORTE"));
                 marcarError(txtSoporte);
@@ -273,7 +268,6 @@ public class FormDNI extends javax.swing.JPanel implements Internationalization 
                 restablecerEstilo(txtSoporte);
             }
 
-            // 3. Validar Equipo Expedición
             if (!txtExpedicion.getText().matches("\\d{9}")) {
                 errores.append(bundle.getString("ERR_EXPEDICION"));
                 marcarError(txtExpedicion);
@@ -282,7 +276,6 @@ public class FormDNI extends javax.swing.JPanel implements Internationalization 
                 restablecerEstilo(txtExpedicion);
             }
 
-            // 4. Validar Teléfono
             if (!txtTelefono.getText().matches("[679]\\d{8}")) {
                 errores.append(bundle.getString("ERR_TELEFONO"));
                 marcarError(txtTelefono);
@@ -291,7 +284,6 @@ public class FormDNI extends javax.swing.JPanel implements Internationalization 
                 restablecerEstilo(txtTelefono);
             }
 
-            // 5. Validar Fechas
             if (dateChooser.getDate() == null) {
                 errores.append(bundle.getString("ERR_FECHA_VALIDEZ"));
                 dateChooser.setBorder(javax.swing.BorderFactory.createLineBorder(java.awt.Color.RED, 2));
@@ -320,7 +312,6 @@ public class FormDNI extends javax.swing.JPanel implements Internationalization 
                 }
             }
 
-            // --- MANEJO DE RESULTADOS ---
             if (ok) {
                 java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("dd/MM/yyyy");
                 String fechaStr = sdf.format(fechaCita.getDate());

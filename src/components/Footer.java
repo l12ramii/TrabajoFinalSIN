@@ -22,7 +22,6 @@ public class Footer extends javax.swing.JPanel implements Internationalization {
     public Footer() {
         initComponents();
 
-        // redimension del escudo
         logoPolicia.setIcon(Utils.getScaledIcon("/images/policia-logo-1.png", 60));
     }
 

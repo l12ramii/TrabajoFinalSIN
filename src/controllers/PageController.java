@@ -46,7 +46,6 @@ public class PageController implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        // 1. Identificar y remover el panel que está actualmente en el centro
         BorderLayout layout = (BorderLayout) container.getLayout();
         Component current = layout.getLayoutComponent(BorderLayout.CENTER);
         
@@ -54,7 +53,6 @@ public class PageController implements ActionListener {
             container.remove(current);
         }
 
-        // 2. Seleccionar la nueva instancia (usando tu lógica de Singleton)
         JPanel newPanel;
         newPanel = switch (viewTarget) {
             case LANDING -> Landing.getInstance();
@@ -65,14 +63,11 @@ public class PageController implements ActionListener {
             case AYUDA -> Ayuda.getInstance();
             case CONTACTO -> Contacto.getInstance();
             case TU_OPINION -> TuOpinion.getInstance();
-                //case 3 -> PanelCita.getInstance();
             default -> Landing.getInstance();
         };
 
-        // 3. Inyectar el nuevo panel y refrescar
         container.add(newPanel, BorderLayout.CENTER);
         
-        // Forzar actualización de la UI
         container.revalidate();
         container.repaint();
         

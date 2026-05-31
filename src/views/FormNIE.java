@@ -43,12 +43,10 @@ public class FormNIE extends javax.swing.JPanel implements Internationalization 
     private JLabel lblTitle, 
             lblNie,
             lblSoporte,
-            lblExp,
             lblVal,
             lblTipo,
             lblTelefono,
             lblCita,
-            lblDia,
             lblHora;
 
     /**
@@ -240,7 +238,6 @@ public class FormNIE extends javax.swing.JPanel implements Internationalization 
             StringBuilder errores = new StringBuilder();
             boolean ok = true;
 
-            // 1. Validar NIE (Adaptado a formato NIE si fuera necesario, aquí usa el mismo check)
             if (!validarNIEOficial(txtDNI.getText().trim())) {
                 errores.append("- El NIE introducido no es válido.\n");
                 marcarError(txtDNI);
@@ -248,8 +245,6 @@ public class FormNIE extends javax.swing.JPanel implements Internationalization 
             } else {
                 restablecerEstilo(txtDNI);
             }
-
-            // 2. Validar Soporte
             if (txtSoporte.getText().trim().length() < 6) {
                 errores.append("- El número de soporte debe tener al menos 6 caracteres.\n");
                 marcarError(txtSoporte);
@@ -328,9 +323,9 @@ public class FormNIE extends javax.swing.JPanel implements Internationalization 
 
     private boolean validarNIEOficial(String it) {
         if (!it.matches("[XYZ\\d]\\d{7}[A-Z]")) {
-            return false; // Regex básica para NIE/DNI
+            return false;
         }
-        return true; // Aquí podrías integrar el cálculo del módulo 23 si fuera necesario
+        return true;
     }
 
     public static FormNIE getInstance() {

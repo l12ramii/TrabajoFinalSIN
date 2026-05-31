@@ -795,10 +795,9 @@ public class TuOpinion extends javax.swing.JPanel implements Internationalizatio
     }// </editor-fold>//GEN-END:initComponents
 
     private void FinalizarEncuestaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FinalizarEncuestaActionPerformed
-        // 1. Obtener de forma dinámica el bundle con el idioma activo
         java.util.ResourceBundle bundleActual = main.Main.getBundle();
 
-        // 2. VALIDACIÓN: Comprobar que las 10 preguntas tengan una opción marcada
+        // Comprobar que las 10 preguntas tengan una opción marcada
         if (buttonGroup1.getSelection() == null
                 || buttonGroup2.getSelection() == null
                 || buttonGroup3.getSelection() == null
@@ -810,22 +809,19 @@ public class TuOpinion extends javax.swing.JPanel implements Internationalizatio
                 || buttonGroup9.getSelection() == null
                 || buttonGroup10.getSelection() == null) {
 
-            // Mensaje de error internacionalizado usando los índices del bundle
             javax.swing.JOptionPane.showMessageDialog(this,
                     bundleActual.getString("ENCUESTA_INCOMPLETA_MSG"),
                     bundleActual.getString("ENCUESTA_INCOMPLETA_TIT"),
                     javax.swing.JOptionPane.WARNING_MESSAGE);
 
-            return; // Detiene la ejecución si falta alguna respuesta
+            return;
         }
 
-        // 3. Si pasa la validación, mostramos el mensaje de éxito internacionalizado
         javax.swing.JOptionPane.showMessageDialog(this,
                 bundleActual.getString("ENCUESTA_EXITO_MSG"),
                 bundleActual.getString("ENCUESTA_EXITO_TIT"),
                 javax.swing.JOptionPane.INFORMATION_MESSAGE);
 
-        // 4. Ejecutar el cambio de pantalla de retorno a la Landing Page
         javax.swing.JPanel contenedor = (javax.swing.JPanel) this.getParent();
         controllers.PageController control = new controllers.PageController(contenedor, controllers.PageController.LANDING);
         control.actionPerformed(new java.awt.event.ActionEvent(evt.getSource(), java.awt.event.ActionEvent.ACTION_PERFORMED, ""));

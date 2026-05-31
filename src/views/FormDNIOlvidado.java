@@ -32,7 +32,6 @@ public class FormDNIOlvidado extends javax.swing.JPanel implements International
 
     private static FormDNIOlvidado instance;
 
-    // Componentes del Formulario (Declarados como campos de clase)
     private JTextField txtDNI, txtNombre, txtApellido1, txtApellido2, txtPadre, txtMadre, txtEmail, txtEmail2;
     private JComboBox<String> comboProvincia;
     private JDateChooser dateNacimiento;
@@ -118,7 +117,7 @@ public class FormDNIOlvidado extends javax.swing.JPanel implements International
         gbc.gridx = 1;
         card.add(txtApellido2, gbc);
 
-        // Filiación
+        // Padre madre
         gbc.gridy = 5;
         gbc.gridx = 0;
         lblPadre = crearLabel("Padre", fuenteLabels);
@@ -240,7 +239,7 @@ public class FormDNIOlvidado extends javax.swing.JPanel implements International
                 restablecerEstilo(txtApellido2);
             }
 
-            // 3. Filiación
+            // 3. Padre madre
             if (txtPadre.getText().trim().isEmpty()) {
                 errores.append("- Debe indicar el nombre del padre.\n");
                 marcarError(txtPadre);
