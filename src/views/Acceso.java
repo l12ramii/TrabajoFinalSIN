@@ -5,27 +5,26 @@
 package views;
 
 import controllers.PageController;
-import java.awt.AWTError;
 import java.awt.Color;
-import java.awt.font.TextAttribute;
+import java.util.ResourceBundle;
 import javax.swing.JPanel;
 
 /**
  *
  * @author aramo
  */
-public class Acceso extends javax.swing.JPanel {
+public class Acceso extends javax.swing.JPanel implements Internationalization {
 
     private static Acceso instance;
-    
+
     /**
      * Creates new form Acceso
      */
     public Acceso() {
         initComponents();
     }
-    
-    public static Acceso getInstance(){
+
+    public static Acceso getInstance() {
         if (instance == null) {
             instance = new Acceso();
         }
@@ -61,7 +60,8 @@ public class Acceso extends javax.swing.JPanel {
         accesoDNI.setBackground(new java.awt.Color(0, 51, 132));
         accesoDNI.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
         accesoDNI.setForeground(new java.awt.Color(255, 255, 255));
-        accesoDNI.setText("Acceso con DNI");
+        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("resources/Bundle_es_ES"); // NOI18N
+        accesoDNI.setText(bundle.getString("ACCESO_CON_DNI")); // NOI18N
         accesoDNI.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 30, 10, 30));
         accesoDNI.setBorderPainted(false);
         accesoDNI.setContentAreaFilled(false);
@@ -88,7 +88,7 @@ public class Acceso extends javax.swing.JPanel {
         accesoNIE.setBackground(new java.awt.Color(235, 235, 235));
         accesoNIE.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
         accesoNIE.setForeground(new java.awt.Color(0, 51, 132));
-        accesoNIE.setText("Acceso con NIE");
+        accesoNIE.setText(bundle.getString("ACCESO_CON_NIE")); // NOI18N
         accesoNIE.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 51, 132), 2, true));
         accesoNIE.setContentAreaFilled(false);
         accesoNIE.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -125,7 +125,7 @@ public class Acceso extends javax.swing.JPanel {
 
         dniRobado.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         dniRobado.setForeground(new java.awt.Color(0, 51, 132));
-        dniRobado.setText("<html><body style='width: 400px; text-align:center;'>He perdido mi DNI o me lo han robado</body></html>");
+        dniRobado.setText(bundle.getString("TEXTO_DNI_PERDIDO")); // NOI18N
         dniRobado.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         dniRobado.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -166,7 +166,7 @@ public class Acceso extends javax.swing.JPanel {
     }//GEN-LAST:event_accesoNIEMouseEntered
 
     private void accesoNIEMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_accesoNIEMouseExited
-        accesoNIE.setBackground(new Color(235,235,235));
+        accesoNIE.setBackground(new Color(235, 235, 235));
     }//GEN-LAST:event_accesoNIEMouseExited
 
     private void accesoNIEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_accesoNIEActionPerformed
@@ -203,4 +203,12 @@ public class Acceso extends javax.swing.JPanel {
     private javax.swing.JLabel dniRobado;
     private javax.swing.JLabel title;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void actualizarTextos(ResourceBundle bundle) {
+        title.setText(bundle.getString("RENOVACION_DNI"));
+        accesoDNI.setText(bundle.getString("ACCESO_CON_DNI"));
+        accesoNIE.setText(bundle.getString("ACCESO_CON_NIE"));
+        dniRobado.setText(bundle.getString("TEXTO_DNI_PERDIDO"));
+    }
 }

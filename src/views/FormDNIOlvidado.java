@@ -13,7 +13,7 @@ import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
-import java.util.Calendar;
+import java.util.ResourceBundle;
 import javax.swing.BorderFactory;
 import javax.swing.Icon;
 import javax.swing.JButton;
@@ -28,7 +28,7 @@ import javax.swing.SwingConstants;
  *
  * @author aramo
  */
-public class FormDNIOlvidado extends javax.swing.JPanel {
+public class FormDNIOlvidado extends javax.swing.JPanel implements Internationalization {
 
     private static FormDNIOlvidado instance;
 
@@ -38,6 +38,16 @@ public class FormDNIOlvidado extends javax.swing.JPanel {
     private JDateChooser dateNacimiento;
     private JButton btnEnviar;
     private JPanel card;
+    private JLabel lblDni, lblNombre,
+            lblApellido1,
+            lblApellido2,
+            lblPadre,
+            lblMadre,
+            lblFechaNac,
+            lblProvincia,
+            lblEmail,
+            lblRepEmail,
+            lblTitle;
 
     /**
      * Creates new form FormDNIRobado
@@ -61,13 +71,13 @@ public class FormDNIOlvidado extends javax.swing.JPanel {
         gbc.insets = new Insets(4, 15, 4, 15);
 
         // --- TÍTULO ---
-        JLabel title = new JLabel("Formulario por Pérdida o Robo", SwingConstants.CENTER);
-        title.setFont(new Font("Arial", Font.BOLD, 24));
+        lblTitle = new JLabel("Formulario por Pérdida o Robo", SwingConstants.CENTER);
+        lblTitle.setFont(new Font("Arial", Font.BOLD, 24));
         gbc.gridx = 0;
         gbc.gridy = 0;
         gbc.gridwidth = 3;
         gbc.insets = new Insets(15, 0, 20, 0);
-        card.add(title, gbc);
+        card.add(lblTitle, gbc);
 
         gbc.gridwidth = 1;
         gbc.insets = new Insets(3, 15, 3, 15);
@@ -76,7 +86,8 @@ public class FormDNIOlvidado extends javax.swing.JPanel {
         // DNI
         gbc.gridy = 1;
         gbc.gridx = 0;
-        card.add(crearLabel("DNI y Letra:", fuenteLabels), gbc);
+        lblDni = crearLabel("DNI y Letra:", fuenteLabels);
+        card.add(lblDni, gbc);
         txtDNI = new JTextField(15);
         gbc.gridx = 1;
         card.add(txtDNI, gbc);
@@ -84,7 +95,8 @@ public class FormDNIOlvidado extends javax.swing.JPanel {
         // Nombre
         gbc.gridy = 2;
         gbc.gridx = 0;
-        card.add(crearLabel("Nombre:", fuenteLabels), gbc);
+        lblNombre = crearLabel("Nombre:", fuenteLabels);
+        card.add(lblNombre, gbc);
         txtNombre = new JTextField(15);
         gbc.gridx = 1;
         card.add(txtNombre, gbc);
@@ -92,14 +104,16 @@ public class FormDNIOlvidado extends javax.swing.JPanel {
         // Apellidos
         gbc.gridy = 3;
         gbc.gridx = 0;
-        card.add(crearLabel("Primer Apellido:", fuenteLabels), gbc);
+        lblApellido1 = crearLabel(("Primer apellido"), fuenteLabels);
+        card.add(lblApellido1, gbc);
         txtApellido1 = new JTextField(15);
         gbc.gridx = 1;
         card.add(txtApellido1, gbc);
 
         gbc.gridy = 4;
         gbc.gridx = 0;
-        card.add(crearLabel("Segundo Apellido:", fuenteLabels), gbc);
+        lblApellido2 = crearLabel("Segundo apellido:", fuenteLabels);
+        card.add(lblApellido2, gbc);
         txtApellido2 = new JTextField(15);
         gbc.gridx = 1;
         card.add(txtApellido2, gbc);
@@ -107,14 +121,16 @@ public class FormDNIOlvidado extends javax.swing.JPanel {
         // Filiación
         gbc.gridy = 5;
         gbc.gridx = 0;
-        card.add(crearLabel("Hijo/a de (Padre):", fuenteLabels), gbc);
+        lblPadre = crearLabel("Padre", fuenteLabels);
+        card.add(lblPadre, gbc);
         txtPadre = new JTextField(15);
         gbc.gridx = 1;
         card.add(txtPadre, gbc);
 
         gbc.gridy = 6;
         gbc.gridx = 0;
-        card.add(crearLabel("Hijo/a de (Madre):", fuenteLabels), gbc);
+        lblMadre = crearLabel("Madre", fuenteLabels);
+        card.add(lblMadre, gbc);
         txtMadre = new JTextField(15);
         gbc.gridx = 1;
         card.add(txtMadre, gbc);
@@ -122,7 +138,8 @@ public class FormDNIOlvidado extends javax.swing.JPanel {
         // Nacimiento
         gbc.gridy = 7;
         gbc.gridx = 0;
-        card.add(crearLabel("Fecha de Nacimiento:", fuenteLabels), gbc);
+        lblFechaNac = crearLabel("Fecha de nacimiento", fuenteLabels);
+        card.add(lblFechaNac, gbc);
         dateNacimiento = new JDateChooser(null, null, null, null);
         dateNacimiento.setDateFormatString("dd/MM/yyyy");
         gbc.gridx = 1;
@@ -130,7 +147,8 @@ public class FormDNIOlvidado extends javax.swing.JPanel {
 
         gbc.gridy = 8;
         gbc.gridx = 0;
-        card.add(crearLabel("Lugar de Nacimiento:", fuenteLabels), gbc);
+        lblProvincia = crearLabel("Lugar de nacimiento", fuenteLabels);
+        card.add(lblProvincia, gbc);
         comboProvincia = new JComboBox<>(getProvincias());
         gbc.gridx = 1;
         card.add(comboProvincia, gbc);
@@ -138,31 +156,19 @@ public class FormDNIOlvidado extends javax.swing.JPanel {
         // Email
         gbc.gridy = 9;
         gbc.gridx = 0;
-        card.add(crearLabel("Correo Electrónico:", fuenteLabels), gbc);
+        lblEmail = crearLabel("Correo electrónico", fuenteLabels);
+        card.add(lblEmail, gbc);
         txtEmail = new JTextField(15);
         gbc.gridx = 1;
         card.add(txtEmail, gbc);
 
         gbc.gridy = 10;
         gbc.gridx = 0;
-        card.add(crearLabel("Repetir Correo:", fuenteLabels), gbc);
+        lblRepEmail = crearLabel("Repetir correo", fuenteLabels);
+        card.add(lblRepEmail, gbc);
         txtEmail2 = new JTextField(15);
         gbc.gridx = 1;
         card.add(txtEmail2, gbc);
-
-        // --- IMAGEN LATERAL ---
-        JLabel lblImg = new JLabel();
-        try {
-            lblImg.setIcon(utils.Utils.getScaledIcon("/images/ayuda_perdida.png", 300));
-        } catch (Exception e) {
-            lblImg.setText("[Imagen Ayuda]");
-        }
-        GridBagConstraints gbcImg = new GridBagConstraints();
-        gbcImg.gridx = 2;
-        gbcImg.gridy = 1;
-        gbcImg.gridheight = 8;
-        gbcImg.insets = new Insets(0, 20, 0, 10);
-        card.add(lblImg, gbcImg);
 
         // --- BOTÓN ENVIAR ---
         btnEnviar = new JButton("Enviar Datos");
@@ -352,6 +358,20 @@ public class FormDNIOlvidado extends javax.swing.JPanel {
             .addGap(0, 300, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    @Override
+    public void actualizarTextos(ResourceBundle bundle) {
+        lblNombre.setText(bundle.getString("NOMBRE"));
+        lblApellido1.setText(bundle.getString("PRIMER_APELLIDO"));
+        lblApellido2.setText(bundle.getString("SEGUNDO_APELLIDO"));
+        lblPadre.setText(bundle.getString("PADRE"));
+        lblMadre.setText(bundle.getString("MADRE"));
+        lblFechaNac.setText(bundle.getString("FECHA_NACIMIENTO"));
+        lblProvincia.setText(bundle.getString("LUGAR_NACIMIENTO"));
+        lblEmail.setText(bundle.getString("CORREO_ELECTRONICO"));
+        lblRepEmail.setText(bundle.getString("REPETIR_CORREO"));
+        btnEnviar.setText(bundle.getString("ENVIAR_DATOS"));
+    }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

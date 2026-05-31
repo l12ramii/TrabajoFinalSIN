@@ -4,22 +4,96 @@
  */
 package components;
 
+import main.Main;
 import controllers.PageController;
+import javax.swing.JMenuItem;
 import javax.swing.JPanel;
+import javax.swing.JPopupMenu;
 import utils.Utils;
+import views.Internationalization;
 
 /**
  *
  * @author aramo
  */
-public class Header extends javax.swing.JPanel {
+public class Header extends javax.swing.JPanel implements Internationalization {
+
+    private Main mainApp;
+    private static Header instance;
 
     /**
      * Creates new form Header
      */
-    public Header() {
+    public Header(Main main) {
+        mainApp = main;
         initComponents();
+        configurarMenuIdiomas();
+        try {
+            idioma.setIcon(utils.Utils.getScaledIcon("/images/bandera-spain.png", 25));
+            idioma.setIconTextGap(10);
+            idioma.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        } catch (Exception e) {
+            System.err.println("No se pudo cargar la bandera inicial: " + e.getMessage());
+        }
         iconoPolicia.setIcon(Utils.getScaledIcon("/images/policia-log-2.png", 275));
+    }
+
+    public static Header getInstance(Main main) {
+        if (instance == null) {
+            instance = new Header(main);
+        }
+        return instance;
+    }
+
+    private void configurarMenuIdiomas() {
+        JPopupMenu menu = new JPopupMenu();
+
+        // Opción Español
+        JMenuItem itemEs = new JMenuItem("Español", utils.Utils.getScaledIcon("/images/bandera-spain.png", 20));
+        itemEs.addActionListener(e -> {
+            mainApp.cambiarIdioma("es", "ES"); // Llama al método de Main
+            idioma.setIcon(utils.Utils.getScaledIcon("/images/bandera-spain.png", 25));
+            idioma.setIconTextGap(10);
+            idioma.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        });
+
+        // Opción catalán
+        JMenuItem itemCat = new JMenuItem("Català", utils.Utils.getScaledIcon("/images/bandera-catalunya.png", 20));
+        itemCat.addActionListener(e -> {
+            mainApp.cambiarIdioma("ca", "ES"); // Llama al método de Main
+            idioma.setIcon(utils.Utils.getScaledIcon("/images/bandera-catalunya.png", 25));
+            idioma.setIconTextGap(10);
+            idioma.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        });
+
+        // Opción Inglés
+        JMenuItem itemEn = new JMenuItem("English", utils.Utils.getScaledIcon("/images/bandera-uk.png", 20));
+        itemEn.addActionListener(e -> {
+            mainApp.cambiarIdioma("en", "GB"); // Llama al método de Main
+            idioma.setIcon(utils.Utils.getScaledIcon("/images/bandera-uk.png", 25));
+            idioma.setIconTextGap(10);
+            idioma.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        });
+
+        menu.add(itemEs);
+        menu.add(itemCat);
+        menu.add(itemEn);
+
+        // Evento para mostrar el menú al clicar en la bandera del Header
+        idioma.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menu.show(evt.getComponent(), evt.getX(), evt.getY());
+            }
+        });
+    }
+
+    @Override
+    public void actualizarTextos(java.util.ResourceBundle bundle) {
+        inicio.setText(bundle.getString("INICIO"));
+        ayuda.setText(bundle.getString("AYUDA"));
+        contacto.setText(bundle.getString("CONTACTO"));
+        tuOpinion.setText(bundle.getString("TU_OPINION"));
+        idioma.setText(bundle.getString("IDIOMA_TITULO"));
     }
 
     /**
@@ -54,7 +128,8 @@ public class Header extends javax.swing.JPanel {
 
         inicio.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         inicio.setForeground(new java.awt.Color(255, 255, 255));
-        inicio.setText("Inicio");
+        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("resources/Bundle_es_ES"); // NOI18N
+        inicio.setText(bundle.getString("INICIO")); // NOI18N
         inicio.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         inicio.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -69,7 +144,7 @@ public class Header extends javax.swing.JPanel {
 
         ayuda.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         ayuda.setForeground(new java.awt.Color(255, 255, 255));
-        ayuda.setText("Ayuda\n");
+        ayuda.setText(bundle.getString("AYUDA")); // NOI18N
         ayuda.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
@@ -79,7 +154,7 @@ public class Header extends javax.swing.JPanel {
 
         contacto.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         contacto.setForeground(new java.awt.Color(255, 255, 255));
-        contacto.setText("Contacto");
+        contacto.setText(bundle.getString("CONTACTO")); // NOI18N
         contacto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 3;
@@ -89,7 +164,7 @@ public class Header extends javax.swing.JPanel {
 
         tuOpinion.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         tuOpinion.setForeground(new java.awt.Color(255, 255, 255));
-        tuOpinion.setText("Tu opinión");
+        tuOpinion.setText(bundle.getString("TU_OPINION")); // NOI18N
         tuOpinion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
@@ -99,7 +174,7 @@ public class Header extends javax.swing.JPanel {
 
         idioma.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         idioma.setForeground(new java.awt.Color(255, 255, 255));
-        idioma.setText("Idioma");
+        idioma.setText(bundle.getString("IDIOMA_TITULO")); // NOI18N
         idioma.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 5;

@@ -5,7 +5,6 @@
 package views;
 
 import com.toedter.calendar.JDateChooser;
-import controllers.PageController;
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Dimension;
@@ -15,11 +14,11 @@ import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.util.Calendar;
+import java.util.ResourceBundle;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
@@ -29,7 +28,7 @@ import javax.swing.border.LineBorder;
  *
  * @author aramo
  */
-public class FormDNI extends javax.swing.JPanel {
+public class FormDNI extends javax.swing.JPanel implements Internationalization {
 
     private static FormDNI instance;
 
@@ -39,6 +38,15 @@ public class FormDNI extends javax.swing.JPanel {
     private JButton btnEnviar;
     private JPanel card;
     private JDateChooser dateChooser, fechaCita;
+    private JLabel lblTitulo,
+            lblDni,
+            lblSoporte,
+            lblExp,
+            lblVal,
+            lblTelefono,
+            lblCita,
+            lblDia,
+            lblHora;
 
     /**
      * Creates new form FormDNI
@@ -62,13 +70,13 @@ public class FormDNI extends javax.swing.JPanel {
         gbc.fill = GridBagConstraints.HORIZONTAL;
 
         // --- FILA 0: TÍTULO ---
-        JLabel title = new JLabel("Introduce tus datos:", SwingConstants.CENTER);
-        title.setFont(new Font("Arial", Font.BOLD, 26));
+        lblTitulo = new JLabel("Introduce tus datos:", SwingConstants.CENTER);
+        lblTitulo.setFont(new Font("Arial", Font.BOLD, 26));
         gbc.gridx = 0;
         gbc.gridy = 0;
         gbc.gridwidth = 3;
         gbc.insets = new Insets(20, 0, 25, 0);
-        card.add(title, gbc);
+        card.add(lblTitulo, gbc);
 
         // Reset para los campos (Márgenes compactos)
         gbc.gridwidth = 1;
@@ -78,9 +86,9 @@ public class FormDNI extends javax.swing.JPanel {
         // Fila 1: DNI
         gbc.gridy = 1;
         gbc.gridx = 0;
-        JLabel lblDNI = new JLabel("DNI (con letra):");
-        lblDNI.setFont(fuenteLabels);
-        card.add(lblDNI, gbc);
+        lblDni = new JLabel("DNI (con letra):");
+        lblDni.setFont(fuenteLabels);
+        card.add(lblDni, gbc);
         txtDNI = new JTextField(15);
         gbc.gridx = 1;
         card.add(txtDNI, gbc);
@@ -88,7 +96,7 @@ public class FormDNI extends javax.swing.JPanel {
         // Fila 2: Soporte
         gbc.gridy = 2;
         gbc.gridx = 0;
-        JLabel lblSoporte = new JLabel("Número de Soporte:");
+        lblSoporte = new JLabel("Número de Soporte:");
         lblSoporte.setFont(fuenteLabels);
         card.add(lblSoporte, gbc);
         txtSoporte = new JTextField(15);
@@ -98,7 +106,7 @@ public class FormDNI extends javax.swing.JPanel {
         // Fila 3: Expedición
         gbc.gridy = 3;
         gbc.gridx = 0;
-        JLabel lblExp = new JLabel("Equipo de Expedición:");
+        lblExp = new JLabel("Equipo de Expedición:");
         lblExp.setFont(fuenteLabels);
         card.add(lblExp, gbc);
         txtExpedicion = new JTextField(15);
@@ -108,7 +116,7 @@ public class FormDNI extends javax.swing.JPanel {
         // Fila 4: Fecha Validez (AJUSTE DE MARGEN)
         gbc.gridy = 4;
         gbc.gridx = 0;
-        JLabel lblVal = new JLabel("Fecha Validez DNI:");
+        lblVal = new JLabel("Fecha Validez DNI:");
         lblVal.setFont(fuenteLabels);
         card.add(lblVal, gbc);
 
@@ -124,7 +132,7 @@ public class FormDNI extends javax.swing.JPanel {
         gbc.gridy = 5;
         gbc.gridx = 0;
         gbc.insets = new Insets(4, 15, 4, 15); // Volvemos al margen normal
-        JLabel lblTelefono = new JLabel("Teléfono móvil:");
+        lblTelefono = new JLabel("Teléfono móvil:");
         lblTelefono.setFont(fuenteLabels);
         card.add(lblTelefono, gbc);
         txtTelefono = new JTextField(15);
@@ -134,7 +142,7 @@ public class FormDNI extends javax.swing.JPanel {
         // Fila 6: Fecha Cita (AJUSTE DE MARGEN)
         gbc.gridy = 6;
         gbc.gridx = 0;
-        JLabel lblCita = new JLabel("Día de la Cita:");
+        lblCita = new JLabel("Día de la Cita:");
         lblCita.setFont(fuenteLabels);
         card.add(lblCita, gbc);
 
@@ -150,7 +158,7 @@ public class FormDNI extends javax.swing.JPanel {
         gbc.gridy = 7;
         gbc.gridx = 0;
         gbc.insets = new Insets(4, 15, 4, 15);
-        JLabel lblHora = new JLabel("Hora de la Cita:");
+        lblHora = new JLabel("Hora de la Cita:");
         lblHora.setFont(fuenteLabels);
         card.add(lblHora, gbc);
 
@@ -239,17 +247,17 @@ public class FormDNI extends javax.swing.JPanel {
 
     private void configurarValidacion() {
         btnEnviar.addActionListener(e -> {
+            ResourceBundle bundle = main.Main.getBundle();
             StringBuilder errores = new StringBuilder();
             boolean ok = true;
 
-            // 1. Validar DNI/NIE
             String dni = txtDNI.getText().trim();
             if (dni.isEmpty()) {
-                errores.append("- El campo DNI/NIE no puede estar vacío.\n");
+                errores.append(bundle.getString("ERR_DNI_VACIO"));
                 marcarError(txtDNI);
                 ok = false;
             } else if (!validarDNIOficial(dni)) {
-                errores.append("- El DNI introducido no es válido o la letra no corresponde.\n");
+                errores.append(bundle.getString("ERR_DNI_INVALIDO"));
                 marcarError(txtDNI);
                 ok = false;
             } else {
@@ -258,7 +266,7 @@ public class FormDNI extends javax.swing.JPanel {
 
             // 2. Validar Soporte
             if (txtSoporte.getText().trim().length() < 6) {
-                errores.append("- El número de soporte debe tener al menos 6 caracteres.\n");
+                errores.append(bundle.getString("ERR_SOPORTE"));
                 marcarError(txtSoporte);
                 ok = false;
             } else {
@@ -267,7 +275,7 @@ public class FormDNI extends javax.swing.JPanel {
 
             // 3. Validar Equipo Expedición
             if (!txtExpedicion.getText().matches("\\d{9}")) {
-                errores.append("- El equipo de expedición debe ser un código numérico de 9 dígitos.\n");
+                errores.append(bundle.getString("ERR_EXPEDICION"));
                 marcarError(txtExpedicion);
                 ok = false;
             } else {
@@ -276,7 +284,7 @@ public class FormDNI extends javax.swing.JPanel {
 
             // 4. Validar Teléfono
             if (!txtTelefono.getText().matches("[679]\\d{8}")) {
-                errores.append("- El teléfono debe tener 9 dígitos y empezar por 6, 7 o 9.\n");
+                errores.append(bundle.getString("ERR_TELEFONO"));
                 marcarError(txtTelefono);
                 ok = false;
             } else {
@@ -285,7 +293,7 @@ public class FormDNI extends javax.swing.JPanel {
 
             // 5. Validar Fechas
             if (dateChooser.getDate() == null) {
-                errores.append("- Debe seleccionar la fecha de validez de su documento.\n");
+                errores.append(bundle.getString("ERR_FECHA_VALIDEZ"));
                 dateChooser.setBorder(javax.swing.BorderFactory.createLineBorder(java.awt.Color.RED, 2));
                 ok = false;
             } else {
@@ -293,64 +301,58 @@ public class FormDNI extends javax.swing.JPanel {
             }
 
             if (fechaCita.getDate() == null) {
-                errores.append("- Debe seleccionar un día para su cita.\n");
+                errores.append(bundle.getString("ERR_FECHA_CITA_VACIA"));
                 fechaCita.setBorder(javax.swing.BorderFactory.createLineBorder(java.awt.Color.RED, 2));
                 ok = false;
             } else {
-                fechaCita.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(184, 209, 229), 1));
-            }
+                Calendar hoy = Calendar.getInstance();
+                hoy.set(Calendar.HOUR_OF_DAY, 0);
+                hoy.set(Calendar.MINUTE, 0);
+                hoy.set(Calendar.SECOND, 0);
+                hoy.set(Calendar.MILLISECOND, 0);
 
-            Calendar hoy = Calendar.getInstance();
-            hoy.set(Calendar.HOUR_OF_DAY, 0);
-            hoy.set(Calendar.MINUTE, 0);
-            hoy.set(Calendar.SECOND, 0);
-            hoy.set(Calendar.MILLISECOND, 0);
-
-            if (fechaCita.getDate().before(hoy.getTime())) {
-                errores.append("- La fecha de la cita no puede ser anterior al día de hoy.\n");
-                fechaCita.setBorder(javax.swing.BorderFactory.createLineBorder(java.awt.Color.RED, 2));
-                ok = false;
-            } else {
-                fechaCita.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(184, 209, 229), 1));
+                if (fechaCita.getDate().before(hoy.getTime())) {
+                    errores.append(bundle.getString("ERR_FECHA_CITA_PASADA"));
+                    fechaCita.setBorder(javax.swing.BorderFactory.createLineBorder(java.awt.Color.RED, 2));
+                    ok = false;
+                } else {
+                    fechaCita.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(184, 209, 229), 1));
+                }
             }
 
             // --- MANEJO DE RESULTADOS ---
             if (ok) {
-                // TODO OK: Proceder a la confirmación
                 java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("dd/MM/yyyy");
                 String fechaStr = sdf.format(fechaCita.getDate());
                 String horaStr = comboHora.getSelectedItem() + ":" + comboMin.getSelectedItem();
 
-                String mensajeConfirmacion = "¿Desea confirmar la cita para el día " + fechaStr
-                        + " a las " + horaStr + "h? \n Se te notificará por SMS al número " + txtTelefono.getText();
+                // Uso de MessageFormat para insertar variables en el texto traducido
+                String mensajeConfirmacion = java.text.MessageFormat.format(
+                        bundle.getString("CONFIRMAR_MSG"),
+                        fechaStr, horaStr, txtTelefono.getText()
+                );
 
                 int respuesta = javax.swing.JOptionPane.showConfirmDialog(
-                        this, mensajeConfirmacion, "Confirmar Cita",
+                        this, mensajeConfirmacion, bundle.getString("CONFIRMAR_TITULO"),
                         javax.swing.JOptionPane.YES_NO_OPTION, javax.swing.JOptionPane.QUESTION_MESSAGE
                 );
 
                 if (respuesta == javax.swing.JOptionPane.YES_OPTION) {
-                    javax.swing.Icon iconoTick = null;
-                    try {
-                        iconoTick = utils.Utils.getScaledIcon("/images/correcto.png", 40);
-                    } catch (Exception err) {
-                        System.err.println("Error icono: " + err.getMessage());
-                    }
-
                     javax.swing.JOptionPane.showMessageDialog(
-                            this, "Cita concertada con éxito. Volviendo al inicio...",
-                            "Cita concertada", javax.swing.JOptionPane.INFORMATION_MESSAGE, iconoTick
+                            this, bundle.getString("EXITO_MSG"),
+                            bundle.getString("EXITO_TITULO"),
+                            javax.swing.JOptionPane.INFORMATION_MESSAGE,
+                            utils.Utils.getScaledIcon("/images/correcto.png", 40)
                     );
 
                     javax.swing.JPanel contenedor = (javax.swing.JPanel) getParent();
                     new controllers.PageController(contenedor, controllers.PageController.LANDING).actionPerformed(null);
                 }
             } else {
-                // HAY ERRORES: Mostrar el StringBuilder
                 javax.swing.JOptionPane.showMessageDialog(
                         this,
-                        "Se han encontrado los siguientes errores:\n\n" + errores.toString(),
-                        "Errores de validación",
+                        bundle.getString("ERR_VALIDACION_MSG") + errores.toString(),
+                        bundle.getString("ERR_VALIDACION_TITULO"),
                         javax.swing.JOptionPane.WARNING_MESSAGE
                 );
             }
@@ -407,6 +409,19 @@ public class FormDNI extends javax.swing.JPanel {
             .addGap(0, 300, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    @Override
+    public void actualizarTextos(ResourceBundle bundle) {
+        lblTitulo.setText(bundle.getString("RENOVACION_DNI"));
+        lblDni.setText(bundle.getString("DNI_CON_LETRA"));
+        lblSoporte.setText(bundle.getString("NUM_SOPORT"));
+        lblExp.setText(bundle.getString("EQ_EXP"));
+        lblVal.setText(bundle.getString("FECHA_VALIDEZ_DNI"));
+        lblTelefono.setText(bundle.getString("TELEFONO_MOVIL"));
+        lblCita.setText(bundle.getString("DIA_CITA"));
+        lblHora.setText(bundle.getString("HORA_CITA"));
+        btnEnviar.setText(bundle.getString("ENVIAR_DATOS"));
+    }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

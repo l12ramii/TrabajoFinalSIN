@@ -6,6 +6,7 @@ package views;
 
 import controllers.PageController;
 import java.awt.Color;
+import java.util.ResourceBundle;
 import javax.swing.JPanel;
 import utils.Utils;
 
@@ -13,7 +14,7 @@ import utils.Utils;
  *
  * @author aramo
  */
-public class Landing extends javax.swing.JPanel {
+public class Landing extends javax.swing.JPanel implements Internationalization {
 
     private static Landing instance;
 
@@ -69,7 +70,8 @@ public class Landing extends javax.swing.JPanel {
 
         textoIzq.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         textoIzq.setForeground(new java.awt.Color(0, 0, 0));
-        textoIzq.setText("<html><div style='width: 250px; text-align:justified'>Reserva tu cita para obtener o renovar tus documentos de forma rápida y sencilla.<br><br>Recuerda acudir puntualmente a la oficina seleccionada con toda la documentación necesaria</div></html>");
+        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("resources/Bundle_es_ES"); // NOI18N
+        textoIzq.setText(bundle.getString("TEXTO_LANDING")); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
@@ -88,7 +90,7 @@ public class Landing extends javax.swing.JPanel {
         iniciarTramite.setBackground(new java.awt.Color(0, 51, 132));
         iniciarTramite.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
         iniciarTramite.setForeground(new java.awt.Color(255, 255, 255));
-        iniciarTramite.setText("Iniciar trámite →");
+        iniciarTramite.setText(bundle.getString("INICIAR_TRAMITE")); // NOI18N
         iniciarTramite.setBorder(null);
         iniciarTramite.setBorderPainted(false);
         iniciarTramite.setContentAreaFilled(false);
@@ -141,4 +143,11 @@ public class Landing extends javax.swing.JPanel {
     private javax.swing.JLabel textoIzq;
     private javax.swing.JLabel title;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void actualizarTextos(ResourceBundle bundle) {
+        title.setText(bundle.getString("RENOVACION_DNI"));
+        textoIzq.setText(bundle.getString("TEXTO_LANDING"));
+        iniciarTramite.setText(bundle.getString("INICIAR_TRAMITE"));
+    }
 }

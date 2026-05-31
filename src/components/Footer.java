@@ -4,13 +4,17 @@
  */
 package components;
 
+import java.util.ResourceBundle;
 import utils.Utils;
+import views.Internationalization;
 
 /**
  *
  * @author aramo
  */
-public class Footer extends javax.swing.JPanel {
+public class Footer extends javax.swing.JPanel implements Internationalization {
+
+    private static Footer instance;
 
     /**
      * Creates new form Footer
@@ -20,6 +24,13 @@ public class Footer extends javax.swing.JPanel {
 
         // redimension del escudo
         logoPolicia.setIcon(Utils.getScaledIcon("/images/policia-logo-1.png", 60));
+    }
+
+    public static Footer getInstance() {
+        if (instance == null) {
+            instance = new Footer();
+        }
+        return instance;
     }
 
     /**
@@ -35,7 +46,6 @@ public class Footer extends javax.swing.JPanel {
         logoPolicia = new javax.swing.JLabel();
         textoMinisterio = new javax.swing.JLabel();
         enlaces = new javax.swing.JLabel();
-        idioma = new javax.swing.JLabel();
 
         setBackground(java.awt.Color.lightGray);
         setBorder(javax.swing.BorderFactory.createMatteBorder(1, 0, 0, 0, new java.awt.Color(160, 160, 160)));
@@ -59,27 +69,24 @@ public class Footer extends javax.swing.JPanel {
         add(textoMinisterio, gridBagConstraints);
 
         enlaces.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        enlaces.setText("<html><font face=\"Arial\" color=\"#003399\">\n<b>Privacidad &nbsp;&nbsp;&nbsp;&nbsp; Cookies &nbsp;&nbsp;&nbsp;&nbsp; Mapa Web</b>\n</font></html>");
+        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("resources/Bundle_es_ES"); // NOI18N
+        enlaces.setText(bundle.getString("ENLACES")); // NOI18N
         enlaces.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.weightx = 0.5;
         add(enlaces, gridBagConstraints);
-
-        idioma.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        idioma.setText("<html><div style='text-align: right; font-family: Arial; color: #003399;'>\n<b>EN</b> [UK]\n</div></html>");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
-        gridBagConstraints.insets = new java.awt.Insets(0, 10, 0, 20);
-        add(idioma, gridBagConstraints);
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel enlaces;
-    private javax.swing.JLabel idioma;
     private javax.swing.JLabel logoPolicia;
     private javax.swing.JLabel textoMinisterio;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void actualizarTextos(ResourceBundle bundle) {
+        this.enlaces.setText(bundle.getString("ENLACES"));
+    }
 }

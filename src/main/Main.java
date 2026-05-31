@@ -1,16 +1,22 @@
+package main;
 
 import components.Footer;
 import components.Header;
 import java.awt.BorderLayout;
+import java.util.Locale;
+import java.util.ResourceBundle;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import views.Acceso;
+import views.FormDNI;
+import views.FormDNIOlvidado;
+import views.FormNIE;
 import views.Landing;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-
 /**
  *
  * @author aramo
@@ -18,21 +24,65 @@ import views.Landing;
 public class Main extends javax.swing.JFrame {
 
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Main.class.getName());
+    private static ResourceBundle bundle;
+    private Locale currentLocale;
 
     /**
      * Creates new form Main
      */
     public Main() {
+        // 1. Inicializar localización (Detecta el idioma del sistema automáticamente) [cite: 8, 47]
+        currentLocale = Locale.getDefault();
+        // Si quieres forzar español al inicio, usa: currentLocale = Locale.of("es", "ES"); [cite: 51]
+
+        // 2. Cargar el bundle (Asegúrate de que tus archivos se llamen Bundle_es_ES.properties, etc.) [cite: 14, 59]
+        bundle = ResourceBundle.getBundle("resources.Bundle", currentLocale);
+
         initComponents();
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
-        JPanel header = new Header();
-        JPanel footer = new Footer();
+
+        // 3. Pasar el bundle a los componentes si es necesario
+        // Nota: Es recomendable que Header tenga un método para recibir el bundle
+        JPanel header = Header.getInstance(this);
+        JPanel footer = Footer.getInstance();
         JPanel center = Landing.getInstance();
-        this.setTitle("Cita previa DNI");
+
+        // 4. Aplicar título internacionalizado
+        this.setTitle(bundle.getString("TITULO"));
+
+        jPanel1.setLayout(new BorderLayout()); // Aseguramos el layout
         jPanel1.add(header, BorderLayout.NORTH);
         jPanel1.add(footer, BorderLayout.SOUTH);
         jPanel1.add(center, BorderLayout.CENTER);
-        
+    }
+    
+    public static ResourceBundle getBundle() {
+        return bundle;
+    }
+
+    public void cambiarIdioma(String lenguaje, String pais) {
+        // 1. Definir la nueva localización [cite: 51]
+        this.currentLocale = Locale.of(lenguaje, pais);
+
+        // 2. Cargar el bundle correspondiente [cite: 66]
+        // "resources.Bundle" es la ruta al archivo (sin _es_ES.properties)
+        bundle = ResourceBundle.getBundle("resources.Bundle", currentLocale);
+
+        // 3. Actualizar los componentes del propio Main
+        this.setTitle(bundle.getString("TITULO"));
+
+        // 4. Avisar a los paneles (Header, Landing, etc.)
+        Header.getInstance(this).actualizarTextos(bundle);
+        Landing.getInstance().actualizarTextos(bundle);
+        FormDNI.getInstance().actualizarTextos(bundle);
+        FormNIE.getInstance().actualizarTextos(bundle);
+        FormDNIOlvidado.getInstance().actualizarTextos(bundle);
+        Acceso.getInstance().actualizarTextos(bundle);
+        Footer.getInstance().actualizarTextos(bundle);
+
+        // Forzar el refresco visual
+        this.revalidate();
+        this.repaint();
     }
 
     /**

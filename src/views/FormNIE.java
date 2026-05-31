@@ -15,6 +15,7 @@ import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.util.Calendar;
+import java.util.ResourceBundle;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -29,7 +30,7 @@ import javax.swing.border.LineBorder;
  *
  * @author aramo
  */
-public class FormNIE extends javax.swing.JPanel {
+public class FormNIE extends javax.swing.JPanel implements Internationalization {
 
     private static FormNIE instance;
 
@@ -39,6 +40,16 @@ public class FormNIE extends javax.swing.JPanel {
     private JButton btnEnviar;
     private JPanel card;
     private JDateChooser dateChooser, fechaCita;
+    private JLabel lblTitle, 
+            lblNie,
+            lblSoporte,
+            lblExp,
+            lblVal,
+            lblTipo,
+            lblTelefono,
+            lblCita,
+            lblDia,
+            lblHora;
 
     /**
      * Creates new form FormDNI
@@ -62,13 +73,13 @@ public class FormNIE extends javax.swing.JPanel {
         gbc.fill = GridBagConstraints.HORIZONTAL;
 
         // --- FILA 0: TÍTULO ---
-        JLabel title = new JLabel("Introduce tus datos NIE:", SwingConstants.CENTER);
-        title.setFont(new Font("Arial", Font.BOLD, 26));
+        lblTitle = new JLabel("Introduce tus datos NIE:", SwingConstants.CENTER);
+        lblTitle.setFont(new Font("Arial", Font.BOLD, 26));
         gbc.gridx = 0;
         gbc.gridy = 0;
         gbc.gridwidth = 3;
         gbc.insets = new Insets(20, 0, 25, 0);
-        card.add(title, gbc);
+        card.add(lblTitle, gbc);
 
         gbc.gridwidth = 1;
         gbc.insets = new Insets(4, 15, 4, 15);
@@ -77,9 +88,9 @@ public class FormNIE extends javax.swing.JPanel {
         // Fila 1: NIE
         gbc.gridy = 1;
         gbc.gridx = 0;
-        JLabel lblDNI = new JLabel("NIE (con letra):");
-        lblDNI.setFont(fuenteLabels);
-        card.add(lblDNI, gbc);
+        lblNie = new JLabel("NIE (con letra):");
+        lblNie.setFont(fuenteLabels);
+        card.add(lblNie, gbc);
         txtDNI = new JTextField(15);
         gbc.gridx = 1;
         card.add(txtDNI, gbc);
@@ -87,7 +98,7 @@ public class FormNIE extends javax.swing.JPanel {
         // Fila 2: Soporte
         gbc.gridy = 2;
         gbc.gridx = 0;
-        JLabel lblSoporte = new JLabel("Número de Soporte:");
+        lblSoporte = new JLabel("Número de Soporte:");
         lblSoporte.setFont(fuenteLabels);
         card.add(lblSoporte, gbc);
         txtSoporte = new JTextField(15);
@@ -97,7 +108,7 @@ public class FormNIE extends javax.swing.JPanel {
         // Fila 3: Tipo
         gbc.gridy = 3;
         gbc.gridx = 0;
-        JLabel lblTipo = new JLabel("Tipo de documento:");
+        lblTipo = new JLabel("Tipo de documento:");
         lblTipo.setFont(fuenteLabels);
         card.add(lblTipo, gbc);
         comboTipo = new JComboBox<>(new String[]{"Tarjeta", "Certificado"});
@@ -107,9 +118,9 @@ public class FormNIE extends javax.swing.JPanel {
         // Fila 4: Teléfono
         gbc.gridy = 4;
         gbc.gridx = 0;
-        JLabel lblTlf = new JLabel("Teléfono móvil:");
-        lblTlf.setFont(fuenteLabels);
-        card.add(lblTlf, gbc);
+        lblTelefono = new JLabel("Teléfono móvil:");
+        lblTelefono.setFont(fuenteLabels);
+        card.add(lblTelefono, gbc);
         txtTelefono = new JTextField(15);
         gbc.gridx = 1;
         card.add(txtTelefono, gbc);
@@ -117,7 +128,7 @@ public class FormNIE extends javax.swing.JPanel {
         // Fila 5: Fecha Validez
         gbc.gridy = 5;
         gbc.gridx = 0;
-        JLabel lblVal = new JLabel("Fecha Validez:");
+        lblVal = new JLabel("Fecha Validez:");
         lblVal.setFont(fuenteLabels);
         card.add(lblVal, gbc);
         dateChooser = new JDateChooser(null, null, null, null);
@@ -131,7 +142,7 @@ public class FormNIE extends javax.swing.JPanel {
         // Fila 6: Fecha Cita
         gbc.gridy = 6;
         gbc.gridx = 0;
-        JLabel lblCita = new JLabel("Día de la Cita:");
+        lblCita = new JLabel("Día de la Cita:");
         lblCita.setFont(fuenteLabels);
         card.add(lblCita, gbc);
         fechaCita = new JDateChooser(null, null, null, null);
@@ -145,7 +156,7 @@ public class FormNIE extends javax.swing.JPanel {
         gbc.gridy = 7;
         gbc.gridx = 0;
         gbc.insets = new Insets(4, 15, 4, 15);
-        JLabel lblHora = new JLabel("Hora de la Cita:");
+        lblHora = new JLabel("Hora de la Cita:");
         lblHora.setFont(fuenteLabels);
         card.add(lblHora, gbc);
         JPanel panelHora = new JPanel(new FlowLayout(FlowLayout.LEFT, 5, 0));
@@ -163,7 +174,7 @@ public class FormNIE extends javax.swing.JPanel {
         // --- COLUMNA DERECHA: IMAGEN ---
         JLabel lblImagenDNI = new JLabel();
         try {
-            lblImagenDNI.setIcon(utils.Utils.getScaledIcon("/images/dni-ejemplo-2.png", 320));
+            lblImagenDNI.setIcon(utils.Utils.getScaledIcon("/images/nie-ejemplo-1.jpg", 320));
         } catch (Exception e) {
             lblImagenDNI.setText("[ Imagen Ayuda ]");
             lblImagenDNI.setBorder(BorderFactory.createLineBorder(Color.GRAY));
@@ -349,6 +360,18 @@ public class FormNIE extends javax.swing.JPanel {
             .addGap(0, 300, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    @Override
+    public void actualizarTextos(ResourceBundle bundle) {
+        lblNie.setText(bundle.getString("ACCESO_CON_NIE"));
+        lblTitle.setText(bundle.getString("TITULO"));
+        lblSoporte.setText(bundle.getString("NUM_SOPORT"));
+        lblTipo.setText(bundle.getString("TIPO_DOCUMENTO"));
+        lblTelefono.setText(bundle.getString("TELEFONO_MOVIL"));
+        lblCita.setText(bundle.getString("DIA_CITA"));
+        lblHora.setText(bundle.getString("HORA_CITA"));
+        btnEnviar.setText(bundle.getString("ENVIAR_DATOS"));
+    }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
