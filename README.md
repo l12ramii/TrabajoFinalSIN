@@ -14,7 +14,7 @@ Para ejecutar la aplicación desde la línea de comandos, siga estos pasos:
 1.  Abra una terminal o consola de comandos (CMD o PowerShell).
 2.  Navegue hasta la carpeta `dist` del proyecto:
     ```bash
-    cd ruta/a/TrabajoFinalSin/dist
+    cd ruta/a/TrabajoFinalSIN/dist
     ```
 3.  Escriba el siguiente comando:
     ```bash
