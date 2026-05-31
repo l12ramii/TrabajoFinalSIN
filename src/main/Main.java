@@ -42,7 +42,11 @@ public class Main extends javax.swing.JFrame {
         bundle = ResourceBundle.getBundle("resources.Bundle", currentLocale);
 
         initComponents();
-        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        this.setSize(1280, 720);
+
+        this.setLocationRelativeTo(null);
+
+        this.setExtendedState(javax.swing.JFrame.MAXIMIZED_BOTH);
         jScrollPane1.getVerticalScrollBar().setUnitIncrement(20);
 
         // 3. Pasar el bundle a los componentes si es necesario
