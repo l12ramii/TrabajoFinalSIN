@@ -4,16 +4,15 @@
  */
 package views;
 
-import controllers.PageController;
 import java.awt.Color;
-import javax.swing.JPanel;
-import utils.Utils;
+import java.util.ResourceBundle;
+import javax.swing.JFileChooser;
 
 /**
  *
  * @author aramo
  */
-public class Contacto extends javax.swing.JPanel {
+public class Contacto extends javax.swing.JPanel implements Internationalization {
 
     private static Contacto instance;
 
@@ -46,7 +45,9 @@ public class Contacto extends javax.swing.JPanel {
         textoIzq = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        txtMensaje = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtMensaje = new javax.swing.JTextArea();
+        jPanel1 = new javax.swing.JPanel();
         AdjuntarArchivo = new javax.swing.JButton();
         EnviarMensaje = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
@@ -92,33 +93,54 @@ public class Contacto extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(20, 0, 0, 0);
         centralPanel.add(jLabel2, gridBagConstraints);
 
-        txtMensaje.setBackground(new java.awt.Color(204, 204, 204));
-        txtMensaje.setPreferredSize(new java.awt.Dimension(500, 100));
-        txtMensaje.addActionListener(this::txtMensajeActionPerformed);
+        txtMensaje.setBackground(new java.awt.Color(255, 255, 255));
+        txtMensaje.setColumns(20);
+        txtMensaje.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        txtMensaje.setForeground(new java.awt.Color(0, 0, 0));
+        txtMensaje.setRows(5);
+        jScrollPane1.setViewportView(txtMensaje);
+
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridy = 4;
-        centralPanel.add(txtMensaje, gridBagConstraints);
+        centralPanel.add(jScrollPane1, gridBagConstraints);
 
-        AdjuntarArchivo.setBackground(new java.awt.Color(204, 204, 204));
-        AdjuntarArchivo.setForeground(new java.awt.Color(0, 0, 0));
-        AdjuntarArchivo.setText("Adjuntar archivo");
+        jPanel1.setBackground(new java.awt.Color(231, 240, 247));
+
+        AdjuntarArchivo.setBackground(new java.awt.Color(255, 255, 255));
+        AdjuntarArchivo.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        AdjuntarArchivo.setForeground(new java.awt.Color(0, 51, 132));
+        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("resources/Bundle_es_ES"); // NOI18N
+        AdjuntarArchivo.setText(bundle.getString("CONTACTO_BTN_ADJUNTAR")); // NOI18N
+        AdjuntarArchivo.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(0, 51, 132)));
+        AdjuntarArchivo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        AdjuntarArchivo.setPreferredSize(new java.awt.Dimension(200, 45));
         AdjuntarArchivo.addActionListener(this::AdjuntarArchivoActionPerformed);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridy = 5;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        gridBagConstraints.insets = new java.awt.Insets(15, 200, 0, 0);
-        centralPanel.add(AdjuntarArchivo, gridBagConstraints);
+        jPanel1.add(AdjuntarArchivo);
 
-        EnviarMensaje.setBackground(java.awt.SystemColor.activeCaption);
+        EnviarMensaje.setBackground(new java.awt.Color(0, 51, 132));
+        EnviarMensaje.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         EnviarMensaje.setForeground(new java.awt.Color(255, 255, 255));
         EnviarMensaje.setText("Enviar mensaje");
+        EnviarMensaje.setBorderPainted(false);
+        EnviarMensaje.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        EnviarMensaje.setFocusPainted(false);
+        EnviarMensaje.setPreferredSize(new java.awt.Dimension(200, 45));
+        EnviarMensaje.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                EnviarMensajeMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                EnviarMensajeMouseExited(evt);
+            }
+        });
         EnviarMensaje.addActionListener(this::EnviarMensajeActionPerformed);
+        jPanel1.add(EnviarMensaje);
+
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 5;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        gridBagConstraints.insets = new java.awt.Insets(15, 350, 0, 0);
-        centralPanel.add(EnviarMensaje, gridBagConstraints);
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.insets = new java.awt.Insets(20, 0, 40, 0);
+        centralPanel.add(jPanel1, gridBagConstraints);
 
         jLabel3.setForeground(new java.awt.Color(231, 240, 247));
         jLabel3.setText("jLabel3");
@@ -133,43 +155,52 @@ public class Contacto extends javax.swing.JPanel {
         add(centralPanel, gridBagConstraints);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtMensajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMensajeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtMensajeActionPerformed
-
     private void AdjuntarArchivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdjuntarArchivoActionPerformed
         javax.swing.JFileChooser buscador = new javax.swing.JFileChooser();
+        javax.swing.filechooser.FileNameExtensionFilter filtroImagen
+                = new javax.swing.filechooser.FileNameExtensionFilter(
+                        "Archivos de Imagen (JPG, PNG, GIF)", "jpg", "jpeg", "png", "gif"
+                );
+
+        buscador.setFileFilter(filtroImagen);
+
         int seleccion = buscador.showOpenDialog(this);
 
         if (seleccion == javax.swing.JFileChooser.APPROVE_OPTION) {
             java.io.File archivo = buscador.getSelectedFile();
+            // Aquí podrías mostrar el nombre del archivo en un label para que el usuario sepa que se adjuntó
+            System.out.println("Archivo seleccionado: " + archivo.getName());
         }
     }//GEN-LAST:event_AdjuntarArchivoActionPerformed
 
     private void EnviarMensajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EnviarMensajeActionPerformed
+        java.util.ResourceBundle bundle = main.Main.getBundle();
         String mensaje = txtMensaje.getText().trim();
 
-        if (mensaje.isEmpty() || mensaje.equals("Escriba su consulta o reclamación detallada:")) {
-
+        if (mensaje.isEmpty()) {
             javax.swing.JOptionPane.showMessageDialog(this,
-                "<html><b style='color: #C0392B; font-family: Arial; font-size: 13px;'>Formulario Incompleto:</b><br>"
-                + "<span style='font-family: Arial; font-size: 12px; color: #555555;'>"
-                + "Por favor, rellene tanto el asunto como el cuerpo del mensaje antes de realizar el envío.</span></html>",
-                "Atención - Policía Nacional",
-                javax.swing.JOptionPane.WARNING_MESSAGE);
+                    bundle.getString("CONTACTO_ERR_MSG"),
+                    bundle.getString("CONTACTO_ERR_TIT"),
+                    javax.swing.JOptionPane.WARNING_MESSAGE);
             return;
         }
 
         javax.swing.JOptionPane.showMessageDialog(this,
-            "<html><b style='color: #003384; font-family: Arial; font-size: 13px;'>Consulta Registrada Correctamente</b><br>"
-            + "<span style='font-family: Arial; font-size: 12px; color: #555555;'>"
-            + "Su mensaje y documentación adjunta han sido enviados al Servicio de Atención al Ciudadano.<br>"
-            + "Recibirá una respuesta en su correo electrónico en un plazo máximo de 48 horas.</span></html>",
-            "Envío Exitoso",
-            javax.swing.JOptionPane.INFORMATION_MESSAGE);
+                bundle.getString("CONTACTO_OK_MSG"),
+                bundle.getString("CONTACTO_OK_TIT"),
+                javax.swing.JOptionPane.INFORMATION_MESSAGE);
 
         txtMensaje.setText("");
+
     }//GEN-LAST:event_EnviarMensajeActionPerformed
+
+    private void EnviarMensajeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EnviarMensajeMouseEntered
+        EnviarMensaje.setBackground(new Color(0, 70, 190));
+    }//GEN-LAST:event_EnviarMensajeMouseEntered
+
+    private void EnviarMensajeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EnviarMensajeMouseExited
+        EnviarMensaje.setBackground(new Color(0, 51, 132));
+    }//GEN-LAST:event_EnviarMensajeMouseExited
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -179,8 +210,19 @@ public class Contacto extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel textoIzq;
     private javax.swing.JLabel title;
-    private javax.swing.JTextField txtMensaje;
+    private javax.swing.JTextArea txtMensaje;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void actualizarTextos(ResourceBundle bundle) {
+        title.setText(bundle.getString("CONTACTO_TITULO"));
+        textoIzq.setText(bundle.getString("CONTACTO_INFO"));
+        jLabel2.setText(bundle.getString("CONTACTO_PROMPT"));
+        AdjuntarArchivo.setText(bundle.getString("CONTACTO_BTN_ADJUNTAR"));
+        EnviarMensaje.setText(bundle.getString("CONTACTO_BTN_ENVIAR"));
+    }
 }

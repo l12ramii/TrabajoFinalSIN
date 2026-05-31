@@ -4,16 +4,13 @@
  */
 package views;
 
-import controllers.PageController;
-import java.awt.Color;
-import javax.swing.JPanel;
-import utils.Utils;
+import java.util.ResourceBundle;
 
 /**
  *
  * @author aramo
  */
-public class TuOpinion extends javax.swing.JPanel {
+public class TuOpinion extends javax.swing.JPanel implements Internationalization {
 
     private static TuOpinion instance;
 
@@ -118,7 +115,8 @@ public class TuOpinion extends javax.swing.JPanel {
         jRadioButton5 = new javax.swing.JRadioButton();
         jRadioButton11 = new javax.swing.JRadioButton();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
         FinalizarEncuesta = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
@@ -132,7 +130,8 @@ public class TuOpinion extends javax.swing.JPanel {
 
         title.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         title.setForeground(new java.awt.Color(0, 0, 0));
-        title.setText("Encuesta de facilidad de uso");
+        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("resources/Bundle_es_ES"); // NOI18N
+        title.setText(bundle.getString("ENCUESTA_TITULO")); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
@@ -142,7 +141,7 @@ public class TuOpinion extends javax.swing.JPanel {
 
         textoIzq.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         textoIzq.setForeground(new java.awt.Color(0, 0, 0));
-        textoIzq.setText("<html>\n<div style='width: 480px; text-align: justified; font-family: Arial; color: #000000; line-height: 1.4;'>\nSu opinión es fundamental para seguir modernizando los servicios digitales de la Policía Nacional. Por favor, valore su experiencia de <b>1 (Muy deficiente)</b> a <b>5 (Excelente)\n</div>\n</html>");
+        textoIzq.setText(bundle.getString("ENCUESTA_DESC")); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
@@ -155,6 +154,7 @@ public class TuOpinion extends javax.swing.JPanel {
         centralPanel.add(jLabel5, gridBagConstraints);
 
         jScrollPane1.setBackground(new java.awt.Color(231, 240, 247));
+        jScrollPane1.setBorder(null);
 
         jPanel2.setBackground(new java.awt.Color(231, 240, 247));
         jPanel2.setLayout(new java.awt.GridBagLayout());
@@ -745,19 +745,40 @@ public class TuOpinion extends javax.swing.JPanel {
         gridBagConstraints.gridy = 20;
         jPanel2.add(jLabel1, gridBagConstraints);
 
-        jTextField1.setBackground(new java.awt.Color(204, 204, 204));
-        jTextField1.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField1.setPreferredSize(new java.awt.Dimension(500, 100));
+        jScrollPane2.setPreferredSize(new java.awt.Dimension(400, 100));
+
+        jTextArea1.setBackground(new java.awt.Color(255, 255, 255));
+        jTextArea1.setColumns(20);
+        jTextArea1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jTextArea1.setForeground(new java.awt.Color(0, 0, 0));
+        jTextArea1.setRows(5);
+        jTextArea1.setWrapStyleWord(true);
+        jTextArea1.setPreferredSize(new java.awt.Dimension(350, 80));
+        jScrollPane2.setViewportView(jTextArea1);
+
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridy = 21;
-        jPanel2.add(jTextField1, gridBagConstraints);
+        jPanel2.add(jScrollPane2, gridBagConstraints);
 
-        FinalizarEncuesta.setBackground(java.awt.SystemColor.activeCaption);
+        FinalizarEncuesta.setBackground(new java.awt.Color(0, 51, 132));
+        FinalizarEncuesta.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        FinalizarEncuesta.setForeground(new java.awt.Color(255, 255, 255));
         FinalizarEncuesta.setText("<html>\n  <b style='font-family: Arial; font-size: 16px; color: #FFFFFF;'>Finalizar Encuesta</b>\n</html>");
+        FinalizarEncuesta.setBorderPainted(false);
+        FinalizarEncuesta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        FinalizarEncuesta.setFocusPainted(false);
+        FinalizarEncuesta.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                FinalizarEncuestaMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                FinalizarEncuestaMouseExited(evt);
+            }
+        });
         FinalizarEncuesta.addActionListener(this::FinalizarEncuestaActionPerformed);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridy = 22;
-        gridBagConstraints.insets = new java.awt.Insets(20, 0, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(20, 0, 0, 20);
         jPanel2.add(FinalizarEncuesta, gridBagConstraints);
 
         jScrollPane1.setViewportView(jPanel2);
@@ -774,39 +795,37 @@ public class TuOpinion extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void FinalizarEncuestaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FinalizarEncuestaActionPerformed
-    // 1. VALIDACIÓN: Comprobar que las 10 preguntas tengan una opción marcada
-        // Cambia 'buttonGroupP1', 'buttonGroupP2', etc., por los nombres reales de tus ButtonGroups
-        if (buttonGroup1.getSelection() == null || 
-            buttonGroup2.getSelection() == null || 
-            buttonGroup3.getSelection() == null || 
-            buttonGroup4.getSelection() == null || 
-            buttonGroup5.getSelection() == null || 
-            buttonGroup6.getSelection() == null || 
-            buttonGroup7.getSelection() == null || 
-            buttonGroup8.getSelection() == null || 
-            buttonGroup9.getSelection() == null || 
-            buttonGroup10.getSelection() == null) {
+        // 1. Obtener de forma dinámica el bundle con el idioma activo
+        java.util.ResourceBundle bundleActual = main.Main.getBundle();
 
-            // Mensaje de error elegante si falta alguna por responder
-            javax.swing.JOptionPane.showMessageDialog(this, 
-                "<html><b style='color: #C0392B; font-family: Arial; font-size: 13px;'>Encuesta Incompleta</b><br>"
-                + "<span style='font-family: Arial; font-size: 12px; color: #555555;'>"
-                + "Por favor, responda a las 10 preguntas obligatorias antes de finalizar la encuesta.</span></html>", 
-                "Atención - Policía Nacional", 
-                javax.swing.JOptionPane.WARNING_MESSAGE);
+        // 2. VALIDACIÓN: Comprobar que las 10 preguntas tengan una opción marcada
+        if (buttonGroup1.getSelection() == null
+                || buttonGroup2.getSelection() == null
+                || buttonGroup3.getSelection() == null
+                || buttonGroup4.getSelection() == null
+                || buttonGroup5.getSelection() == null
+                || buttonGroup6.getSelection() == null
+                || buttonGroup7.getSelection() == null
+                || buttonGroup8.getSelection() == null
+                || buttonGroup9.getSelection() == null
+                || buttonGroup10.getSelection() == null) {
 
-            return; // Ponemos este return para que el código SE DETENGA AQUÍ y no envíe nada
+            // Mensaje de error internacionalizado usando los índices del bundle
+            javax.swing.JOptionPane.showMessageDialog(this,
+                    bundleActual.getString("ENCUESTA_INCOMPLETA_MSG"),
+                    bundleActual.getString("ENCUESTA_INCOMPLETA_TIT"),
+                    javax.swing.JOptionPane.WARNING_MESSAGE);
+
+            return; // Detiene la ejecución si falta alguna respuesta
         }
 
-        // 2. Si pasa la validación, mostramos el mensaje de éxito
-        javax.swing.JOptionPane.showMessageDialog(this, 
-            "<html><b style='color:#003384; font-family: Arial; font-size: 13px;'>¡Muchas gracias por su colaboración!</b><br>"
-            + "<span style='font-family: Arial; font-size: 12px; color: #555555;'>"
-            + "Sus respuestas nos ayudan a mejorar la usabilidad de la plataforma.</span></html>", 
-            "Encuesta Finalizada", 
-            javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        // 3. Si pasa la validación, mostramos el mensaje de éxito internacionalizado
+        javax.swing.JOptionPane.showMessageDialog(this,
+                bundleActual.getString("ENCUESTA_EXITO_MSG"),
+                bundleActual.getString("ENCUESTA_EXITO_TIT"),
+                javax.swing.JOptionPane.INFORMATION_MESSAGE);
 
-        // 3. Ejecutamos el cambio de pantalla que corregimos antes
+        // 4. Ejecutar el cambio de pantalla de retorno a la Landing Page
         javax.swing.JPanel contenedor = (javax.swing.JPanel) this.getParent();
         controllers.PageController control = new controllers.PageController(contenedor, controllers.PageController.LANDING);
         control.actionPerformed(new java.awt.event.ActionEvent(evt.getSource(), java.awt.event.ActionEvent.ACTION_PERFORMED, ""));
@@ -815,6 +834,14 @@ public class TuOpinion extends javax.swing.JPanel {
     private void jRadioButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton8ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButton8ActionPerformed
+
+    private void FinalizarEncuestaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FinalizarEncuestaMouseEntered
+        FinalizarEncuesta.setBackground(new java.awt.Color(0, 70, 190));
+    }//GEN-LAST:event_FinalizarEncuestaMouseEntered
+
+    private void FinalizarEncuestaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FinalizarEncuestaMouseExited
+        FinalizarEncuesta.setBackground(new java.awt.Color(0, 51, 132));
+    }//GEN-LAST:event_FinalizarEncuestaMouseExited
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -894,8 +921,27 @@ public class TuOpinion extends javax.swing.JPanel {
     private javax.swing.JRadioButton jRadioButton8;
     private javax.swing.JRadioButton jRadioButton9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel textoIzq;
     private javax.swing.JLabel title;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void actualizarTextos(ResourceBundle bundle) {
+        title.setText(bundle.getString("ENCUESTA_TITULO"));
+        textoIzq.setText(bundle.getString("ENCUESTA_DESC"));
+        jLabel1.setText(bundle.getString("ENCUESTA_SUGERENCIA"));
+        FinalizarEncuesta.setText(bundle.getString("ENCUESTA_BTN_FIN"));
+        jLabel3.setText(bundle.getString("PREGUNTA_1"));
+        jLabel4.setText(bundle.getString("PREGUNTA_2"));
+        jLabel6.setText(bundle.getString("PREGUNTA_3"));
+        jLabel7.setText(bundle.getString("PREGUNTA_4"));
+        jLabel8.setText(bundle.getString("PREGUNTA_5"));
+        jLabel9.setText(bundle.getString("PREGUNTA_6"));
+        jLabel10.setText(bundle.getString("PREGUNTA_7"));
+        jLabel11.setText(bundle.getString("PREGUNTA_8"));
+        jLabel12.setText(bundle.getString("PREGUNTA_9"));
+        jLabel13.setText(bundle.getString("PREGUNTA_10"));
+    }
 }

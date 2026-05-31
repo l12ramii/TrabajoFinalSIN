@@ -8,10 +8,13 @@ import java.util.ResourceBundle;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import views.Acceso;
+import views.Ayuda;
+import views.Contacto;
 import views.FormDNI;
 import views.FormDNIOlvidado;
 import views.FormNIE;
 import views.Landing;
+import views.TuOpinion;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -40,6 +43,7 @@ public class Main extends javax.swing.JFrame {
 
         initComponents();
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        jScrollPane1.getVerticalScrollBar().setUnitIncrement(20);
 
         // 3. Pasar el bundle a los componentes si es necesario
         // Nota: Es recomendable que Header tenga un método para recibir el bundle
@@ -55,7 +59,7 @@ public class Main extends javax.swing.JFrame {
         jPanel1.add(footer, BorderLayout.SOUTH);
         jPanel1.add(center, BorderLayout.CENTER);
     }
-    
+
     public static ResourceBundle getBundle() {
         return bundle;
     }
@@ -79,6 +83,9 @@ public class Main extends javax.swing.JFrame {
         FormDNIOlvidado.getInstance().actualizarTextos(bundle);
         Acceso.getInstance().actualizarTextos(bundle);
         Footer.getInstance().actualizarTextos(bundle);
+        Ayuda.getInstance().actualizarTextos(bundle);
+        TuOpinion.getInstance().actualizarTextos(bundle);
+        Contacto.getInstance().actualizarTextos(bundle);
 
         // Forzar el refresco visual
         this.revalidate();

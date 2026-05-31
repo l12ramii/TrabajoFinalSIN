@@ -4,16 +4,13 @@
  */
 package views;
 
-import controllers.PageController;
-import java.awt.Color;
-import javax.swing.JPanel;
-import utils.Utils;
+import java.util.ResourceBundle;
 
 /**
  *
  * @author aramo
  */
-public class Ayuda extends javax.swing.JPanel {
+public class Ayuda extends javax.swing.JPanel implements Internationalization{
 
     private static Ayuda instance;
 
@@ -57,7 +54,8 @@ public class Ayuda extends javax.swing.JPanel {
 
         title.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         title.setForeground(new java.awt.Color(0, 0, 0));
-        title.setText("Ayuda");
+        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("resources/Bundle_es_ES"); // NOI18N
+        title.setText(bundle.getString("AYUDA")); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
@@ -67,7 +65,7 @@ public class Ayuda extends javax.swing.JPanel {
 
         textoIzq.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         textoIzq.setForeground(new java.awt.Color(0, 0, 0));
-        textoIzq.setText("<html>\n<div style='width: 480px; text-align: justified; font-family: Arial; color: #000000; line-height: 1.4;'>\n  \n  <b style='color: #003384; font-size: 15px;'> 1. El primer paso: Iniciar el trámite</b><br>\n  Para comenzar cualquier gestión, lo primero que debes hacer es pulsar el botón \"Iniciar trámite\" que encontrarás en la pantalla principal. Esto te llevará a la zona segura de identificación.<br><br>\n\n  <b style='color: #003384; font-size: 15px;'> 2. ¿Cómo puedo acceder al sistema?</b><br>\n  Una vez dentro, el sistema te ofrecerá tres opciones para identificarte según tu situación actual. Elige la que te corresponda:<br><br>\n\n  <div style='margin-left: 15px;'>\n    <b>• Opción A: Acceso con DNI</b><br>\n    <i>Usa esta opción si eres ciudadano español y tienes tu documento a mano.</i><br>\n    Deberás introducir el número de tu DNI (con la letra), su fecha de validez y el código del Equipo de Expedición (los datos que aparecen en la tarjeta física).<br><br>\n\n    <b>• Opción B: Acceso con NIE</b><br>\n    <i>Usa esta opción si eres extranjero residente en España.</i><br>\n    Deberás introducir tu número de NIE (que empieza por X, Y o Z) junto con el \"Número de soporte\" que aparece en tu tarjeta de residencia verde o física.<br><br>\n\n    <b>• Opción C: ¿Has perdido o te han robado el documento?</b><br>\n    <i>Si no dispones de los datos anteriores porque has perdido tu DNI o tu NIE (o si te lo han sustraído), selecciona el enlace de \"Pérdida o sustracción de documento\".</i><br>\n    El sistema te pedirá unos datos personales básicos para verificar tu identidad y te permitirá continuar con el trámite para poder obtener un duplicado o renovación.\n  </div>\n\n</div>\n</html>");
+        textoIzq.setText("<html> <div style='width: 480px; text-align: justified; font-family: Arial; color: #000000; line-height: 1.4;'>      <b style='color: #003384; font-size: 15px;'> 1. El primer paso: Iniciar el trámite</b><br>   Para comenzar cualquier gestión, lo primero que debes hacer es pulsar el botón \"Iniciar trámite\" que encontrarás en la pantalla principal. Esto te llevará a la zona segura de identificación.<br><br>    <b style='color: #003384; font-size: 15px;'> 2. ¿Cómo puedo acceder al sistema?</b><br>   Una vez dentro, el sistema te ofrecerá tres opciones para identificarte según tu situación actual. Elige la que te corresponda:<br><br>    <div style='margin-left: 15px;'>     <b>• Opción A: Acceso con DNI</b><br>     <i>Usa esta opción si eres ciudadano español y tienes tu documento a mano.</i><br>     Deberás introducir el número de tu DNI (con la letra), su fecha de validez y el código del Equipo de Expedición (los datos que aparecen en la tarjeta física).<br><br>      <b>• Opción B: Acceso con NIE</b><br>     <i>Usa esta opción si eres extranjero residente en España.</i><br>     Deberás introducir tu número de NIE (que empieza por X, Y o Z) junto con el \"Número de soporte\" que aparece en tu tarjeta de residencia verde o física.<br><br>      <b>• Opción C: ¿Has perdido o te han robado el documento?</b><br>     <i>Si no dispones de los datos anteriores porque has perdido tu DNI o tu NIE (o si te lo han sustraído), selecciona el enlace de \"Pérdida o sustracción de documento\".</i><br>     El sistema te pedirá unos datos personales básicos para verificar tu identidad y te permitirá continuar con el trámite para poder obtener un duplicado o renovación.   </div>  </div> </html>");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
@@ -96,4 +94,10 @@ public class Ayuda extends javax.swing.JPanel {
     private javax.swing.JLabel textoIzq;
     private javax.swing.JLabel title;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void actualizarTextos(ResourceBundle bundle) {
+        textoIzq.setText(bundle.getString("TEXTO_AYUDA"));
+        title.setText(bundle.getString("AYUDA"));
+    }
 }
