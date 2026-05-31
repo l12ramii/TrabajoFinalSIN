@@ -8,7 +8,6 @@ import controllers.PageController;
 import java.awt.Color;
 import javax.swing.JPanel;
 import utils.Utils;
-import java.util.ResourceBundle;
 
 /**
  *
@@ -154,43 +153,53 @@ public class Contacto extends javax.swing.JPanel implements Internationalization
         add(centralPanel, gridBagConstraints);
     }// </editor-fold>                        
 
-    private void AdjuntarArchivoActionPerformed(java.awt.event.ActionEvent evt) {
+    private void AdjuntarArchivoActionPerformed(java.awt.event.ActionEvent evt) {                                                
         javax.swing.JFileChooser buscador = new javax.swing.JFileChooser();
         int seleccion = buscador.showOpenDialog(this);
 
         if (seleccion == javax.swing.JFileChooser.APPROVE_OPTION) {
             java.io.File archivo = buscador.getSelectedFile();
         }
-    }
+    }                                               
 
-    private void EnviarMensajeActionPerformed(java.awt.event.ActionEvent evt) {
+    private void EnviarMensajeActionPerformed(java.awt.event.ActionEvent evt) {                                              
         String mensaje = txtMensaje.getText().trim();
 
         if (mensaje.isEmpty() || mensaje.equals("Escriba su consulta o reclamación detallada:")) {
 
             javax.swing.JOptionPane.showMessageDialog(this,
-                    "<html><b style='color: #C0392B; font-family: Arial; font-size: 13px;'>Formulario Incompleto:</b><br>"
-                    + "<span style='font-family: Arial; font-size: 12px; color: #555555;'>"
-                    + "Por favor, rellene tanto el asunto como el cuerpo del mensaje antes de realizar el envío.</span></html>",
-                    "Atención - Policía Nacional",
-                    javax.swing.JOptionPane.WARNING_MESSAGE);
+                "<html><b style='color: #C0392B; font-family: Arial; font-size: 13px;'>Formulario Incompleto:</b><br>"
+                + "<span style='font-family: Arial; font-size: 12px; color: #555555;'>"
+                + "Por favor, rellene tanto el asunto como el cuerpo del mensaje antes de realizar el envío.</span></html>",
+                "Atención - Policía Nacional",
+                javax.swing.JOptionPane.WARNING_MESSAGE);
             return;
         }
 
         javax.swing.JOptionPane.showMessageDialog(this,
-                "<html><b style='color: #003384; font-family: Arial; font-size: 13px;'>Consulta Registrada Correctamente</b><br>"
-                + "<span style='font-family: Arial; font-size: 12px; color: #555555;'>"
-                + "Su mensaje y documentación adjunta han sido enviados al Servicio de Atención al Ciudadano.<br>"
-                + "Recibirá una respuesta en su correo electrónico en un plazo máximo de 48 horas.</span></html>",
-                "Envío Exitoso",
-                javax.swing.JOptionPane.INFORMATION_MESSAGE);
+            "<html><b style='color: #003384; font-family: Arial; font-size: 13px;'>Consulta Registrada Correctamente</b><br>"
+            + "<span style='font-family: Arial; font-size: 12px; color: #555555;'>"
+            + "Su mensaje y documentación adjunta han sido enviados al Servicio de Atención al Ciudadano.<br>"
+            + "Recibirá una respuesta en su correo electrónico en un plazo máximo de 48 horas.</span></html>",
+            "Envío Exitoso",
+            javax.swing.JOptionPane.INFORMATION_MESSAGE);
 
         txtMensaje.setText("");
-    }
+    }                                             
 
-    private void txtMensajeActionPerformed(java.awt.event.ActionEvent evt) {
+    private void txtMensajeActionPerformed(java.awt.event.ActionEvent evt) {                                           
         // TODO add your handling code here:
     }
+
+       @Override
+    public void actualizarTextos(ResourceBundle bundle) {
+        title.setText(bundle.getString("CONTACTO_TITULO"));
+        textoIzq.setText(bundle.getString("CONTACTO_INFO"));
+        jLabel2.setText(bundle.getString("CONTACTO_PROMPT"));
+        AdjuntarArchivo.setText(bundle.getString("CONTACTO_BTN_ADJUNTAR"));
+        EnviarMensaje.setText(bundle.getString("CONTACTO_BTN_ENVIAR"));
+    }
+
 
     // Variables declaration - do not modify                     
     private javax.swing.JButton AdjuntarArchivo;
@@ -205,13 +214,4 @@ public class Contacto extends javax.swing.JPanel implements Internationalization
     private javax.swing.JLabel title;
     private javax.swing.JTextField txtMensaje;
     // End of variables declaration                   
-
-    @Override
-    public void actualizarTextos(ResourceBundle bundle) {
-        title.setText(bundle.getString("CONTACTO_TITULO"));
-        textoIzq.setText(bundle.getString("CONTACTO_INFO"));
-        jLabel2.setText(bundle.getString("CONTACTO_PROMPT"));
-        AdjuntarArchivo.setText(bundle.getString("CONTACTO_BTN_ADJUNTAR"));
-        EnviarMensaje.setText(bundle.getString("CONTACTO_BTN_ENVIAR"));
-    }
 }
