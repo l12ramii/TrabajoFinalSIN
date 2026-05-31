@@ -42,6 +42,15 @@ public class TuOpinion extends javax.swing.JPanel {
         java.awt.GridBagConstraints gridBagConstraints;
 
         buttonGroup1 = new javax.swing.ButtonGroup();
+        buttonGroup2 = new javax.swing.ButtonGroup();
+        buttonGroup3 = new javax.swing.ButtonGroup();
+        buttonGroup4 = new javax.swing.ButtonGroup();
+        buttonGroup5 = new javax.swing.ButtonGroup();
+        buttonGroup6 = new javax.swing.ButtonGroup();
+        buttonGroup7 = new javax.swing.ButtonGroup();
+        buttonGroup8 = new javax.swing.ButtonGroup();
+        buttonGroup9 = new javax.swing.ButtonGroup();
+        buttonGroup10 = new javax.swing.ButtonGroup();
         centralPanel = new javax.swing.JPanel();
         title = new javax.swing.JLabel();
         textoIzq = new javax.swing.JLabel();
@@ -49,11 +58,68 @@ public class TuOpinion extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
+        jRadioButton102 = new javax.swing.JRadioButton();
+        jRadioButton8 = new javax.swing.JRadioButton();
+        jRadioButton9 = new javax.swing.JRadioButton();
+        jRadioButton10 = new javax.swing.JRadioButton();
+        jRadioButton2 = new javax.swing.JRadioButton();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
         jRadioButton1 = new javax.swing.JRadioButton();
+        jRadioButton105 = new javax.swing.JRadioButton();
+        jRadioButton111 = new javax.swing.JRadioButton();
+        jRadioButton109 = new javax.swing.JRadioButton();
+        jRadioButton112 = new javax.swing.JRadioButton();
+        jRadioButton121 = new javax.swing.JRadioButton();
+        jRadioButton13 = new javax.swing.JRadioButton();
+        jRadioButton14 = new javax.swing.JRadioButton();
+        jRadioButton12 = new javax.swing.JRadioButton();
+        jRadioButton16 = new javax.swing.JRadioButton();
+        jRadioButton17 = new javax.swing.JRadioButton();
+        jRadioButton18 = new javax.swing.JRadioButton();
+        jRadioButton19 = new javax.swing.JRadioButton();
+        jRadioButton20 = new javax.swing.JRadioButton();
+        jRadioButton21 = new javax.swing.JRadioButton();
+        jRadioButton7 = new javax.swing.JRadioButton();
+        jRadioButton23 = new javax.swing.JRadioButton();
+        jRadioButton24 = new javax.swing.JRadioButton();
+        jRadioButton25 = new javax.swing.JRadioButton();
+        jRadioButton26 = new javax.swing.JRadioButton();
+        jRadioButton27 = new javax.swing.JRadioButton();
+        jRadioButton28 = new javax.swing.JRadioButton();
+        jRadioButton29 = new javax.swing.JRadioButton();
+        jRadioButton30 = new javax.swing.JRadioButton();
+        jRadioButton31 = new javax.swing.JRadioButton();
         jRadioButton3 = new javax.swing.JRadioButton();
+        jRadioButton33 = new javax.swing.JRadioButton();
+        jRadioButton34 = new javax.swing.JRadioButton();
+        jRadioButton35 = new javax.swing.JRadioButton();
+        jRadioButton36 = new javax.swing.JRadioButton();
+        jRadioButton37 = new javax.swing.JRadioButton();
+        jRadioButton38 = new javax.swing.JRadioButton();
+        jRadioButton39 = new javax.swing.JRadioButton();
+        jRadioButton40 = new javax.swing.JRadioButton();
         jRadioButton4 = new javax.swing.JRadioButton();
+        jRadioButton42 = new javax.swing.JRadioButton();
+        jRadioButton43 = new javax.swing.JRadioButton();
+        jRadioButton44 = new javax.swing.JRadioButton();
+        jRadioButton45 = new javax.swing.JRadioButton();
+        jRadioButton46 = new javax.swing.JRadioButton();
+        jRadioButton47 = new javax.swing.JRadioButton();
+        jRadioButton48 = new javax.swing.JRadioButton();
+        jRadioButton49 = new javax.swing.JRadioButton();
         jRadioButton5 = new javax.swing.JRadioButton();
-        jRadioButton6 = new javax.swing.JRadioButton();
+        jRadioButton11 = new javax.swing.JRadioButton();
+        jLabel1 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        FinalizarEncuesta = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setForeground(new java.awt.Color(255, 255, 255));
@@ -94,61 +160,605 @@ public class TuOpinion extends javax.swing.JPanel {
         jPanel2.setLayout(new java.awt.GridBagLayout());
 
         jLabel3.setBackground(new java.awt.Color(231, 240, 247));
-        jLabel3.setText("<html>\n<div style='width: 480px; font-family: Arial; color: #003384; font-size: 13px; margin-bottom: 2px;'>\n  <b>1. ¿Le ha resultado sencillo e intuitivo el acceso inicial a la plataforma?</b>\n</div>\n</html>");
+        jLabel3.setText("<html> <div style='width: 480px; font-family: Arial; color: #003384; font-size: 13px; margin-bottom: 2px;'>   <b>1. ¿Le ha resultado sencillo e intuitivo el acceso inicial a la plataforma?</b> </div> </html>");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
         jPanel2.add(jLabel3, gridBagConstraints);
 
-        buttonGroup1.add(jRadioButton1);
-        jRadioButton1.setForeground(new java.awt.Color(0, 0, 0));
-        jRadioButton1.setText("1");
+        buttonGroup1.add(jRadioButton102);
+        jRadioButton102.setForeground(new java.awt.Color(0, 0, 0));
+        jRadioButton102.setText("1");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridy = 1;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         gridBagConstraints.insets = new java.awt.Insets(0, 100, 0, 0);
-        jPanel2.add(jRadioButton1, gridBagConstraints);
+        jPanel2.add(jRadioButton102, gridBagConstraints);
 
-        buttonGroup1.add(jRadioButton3);
-        jRadioButton3.setForeground(new java.awt.Color(0, 0, 0));
-        jRadioButton3.setText("3");
+        buttonGroup3.add(jRadioButton8);
+        jRadioButton8.setForeground(new java.awt.Color(0, 0, 0));
+        jRadioButton8.setText("3");
+        jRadioButton8.addActionListener(this::jRadioButton8ActionPerformed);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridy = 5;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         gridBagConstraints.insets = new java.awt.Insets(0, 300, 0, 0);
-        jPanel2.add(jRadioButton3, gridBagConstraints);
+        jPanel2.add(jRadioButton8, gridBagConstraints);
 
-        buttonGroup1.add(jRadioButton4);
-        jRadioButton4.setForeground(new java.awt.Color(0, 0, 0));
-        jRadioButton4.setText("4");
+        buttonGroup3.add(jRadioButton9);
+        jRadioButton9.setForeground(new java.awt.Color(0, 0, 0));
+        jRadioButton9.setText("4");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridy = 5;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         gridBagConstraints.insets = new java.awt.Insets(0, 400, 0, 0);
-        jPanel2.add(jRadioButton4, gridBagConstraints);
+        jPanel2.add(jRadioButton9, gridBagConstraints);
 
-        buttonGroup1.add(jRadioButton5);
-        jRadioButton5.setForeground(new java.awt.Color(0, 0, 0));
-        jRadioButton5.setText("5");
-        jRadioButton5.setToolTipText("");
+        buttonGroup3.add(jRadioButton10);
+        jRadioButton10.setForeground(new java.awt.Color(0, 0, 0));
+        jRadioButton10.setText("5");
+        jRadioButton10.setToolTipText("");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridy = 5;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         gridBagConstraints.insets = new java.awt.Insets(0, 500, 0, 0);
-        jPanel2.add(jRadioButton5, gridBagConstraints);
+        jPanel2.add(jRadioButton10, gridBagConstraints);
 
-        buttonGroup1.add(jRadioButton6);
-        jRadioButton6.setForeground(new java.awt.Color(0, 0, 0));
-        jRadioButton6.setText("2");
+        buttonGroup1.add(jRadioButton2);
+        jRadioButton2.setForeground(new java.awt.Color(0, 0, 0));
+        jRadioButton2.setText("2");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         gridBagConstraints.insets = new java.awt.Insets(0, 200, 0, 0);
-        jPanel2.add(jRadioButton6, gridBagConstraints);
+        jPanel2.add(jRadioButton2, gridBagConstraints);
+
+        jLabel4.setBackground(new java.awt.Color(231, 240, 247));
+        jLabel4.setText("<html> <div style='width: 480px; font-family: Arial; color: #003384; font-size: 13px; margin-bottom: 2px;'>   <b>2. ¿La información sobre los documentos necesarios para su trámite es clara?</b> </div> </html>");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.insets = new java.awt.Insets(15, 0, 0, 0);
+        jPanel2.add(jLabel4, gridBagConstraints);
+
+        jLabel6.setBackground(new java.awt.Color(231, 240, 247));
+        jLabel6.setText("<html>\n<div style='width: 480px; font-family: Arial; color: #003384; font-size: 13px; margin-bottom: 2px;'>\n  <b>3. ¿El lenguaje utilizado en los avisos y mensajes de ayuda es fácil de entender?</b>\n</div>\n</html>");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.insets = new java.awt.Insets(10, 0, 0, 0);
+        jPanel2.add(jLabel6, gridBagConstraints);
+
+        jLabel7.setBackground(new java.awt.Color(231, 240, 247));
+        jLabel7.setText("<html> <div style='width: 480px; font-family: Arial; color: #003384; font-size: 13px; margin-bottom: 2px;'>   <b>4. ¿El diseño visual (colores, botones y distribución) facilita la lectura?</b> </div> </html>");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.insets = new java.awt.Insets(10, 0, 0, 0);
+        jPanel2.add(jLabel7, gridBagConstraints);
+
+        jLabel8.setBackground(new java.awt.Color(231, 240, 247));
+        jLabel8.setText("<html> <div style='width: 480px; font-family: Arial; color: #003384; font-size: 13px; margin-bottom: 2px;'>   <b>5. ¿Considera que el tiempo invertido en completar el proceso ha sido razonable?</b> </div> </html>");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 8;
+        gridBagConstraints.insets = new java.awt.Insets(10, 0, 0, 0);
+        jPanel2.add(jLabel8, gridBagConstraints);
+
+        jLabel9.setBackground(new java.awt.Color(231, 240, 247));
+        jLabel9.setText("<html>\n<div style='width: 480px; font-family: Arial; color: #003384; font-size: 13px; margin-bottom: 2px;'>\n  <b>6. ¿Le ha resultado cómodo rellenar los campos del formulario?</b>\n</div>\n</html>");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 10;
+        gridBagConstraints.insets = new java.awt.Insets(10, 0, 0, 0);
+        jPanel2.add(jLabel9, gridBagConstraints);
+
+        jLabel10.setBackground(new java.awt.Color(231, 240, 247));
+        jLabel10.setText("<html>\n<div style='width: 480px; font-family: Arial; color: #003384; font-size: 13px; margin-bottom: 2px;'>\n  <b>7. ¿El sistema de elección de fecha y hora le ha parecido ágil y funcional??</b>\n</div>\n</html>");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 12;
+        gridBagConstraints.insets = new java.awt.Insets(10, 0, 0, 0);
+        jPanel2.add(jLabel10, gridBagConstraints);
+
+        jLabel11.setBackground(new java.awt.Color(231, 240, 247));
+        jLabel11.setText("<html>\n<div style='width: 480px; font-family: Arial; color: #003384; font-size: 13px; margin-bottom: 2px;'>\n  <b>8. ¿Considera que el aspecto visual es serio, profesional y adecuado para la Policía?</b>\n</div>\n</html>");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 14;
+        gridBagConstraints.insets = new java.awt.Insets(10, 0, 0, 0);
+        jPanel2.add(jLabel11, gridBagConstraints);
+
+        jLabel12.setBackground(new java.awt.Color(231, 240, 247));
+        jLabel12.setText("<html>\n<div style='width: 480px; font-family: Arial; color: #003384; font-size: 13px; margin-bottom: 2px;'>\n  <b>9. ¿Recomendaría el uso de esta aplicación web a otros ciudadanos o familiares?</b>\n</div>\n</html>");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 16;
+        gridBagConstraints.insets = new java.awt.Insets(10, 0, 0, 0);
+        jPanel2.add(jLabel12, gridBagConstraints);
+
+        jLabel13.setBackground(new java.awt.Color(231, 240, 247));
+        jLabel13.setText("<html>\n<div style='width: 480px; font-family: Arial; color: #003384; font-size: 13px; margin-bottom: 2px;'>\n  <b>10. En resumen, ¿cuánto esfuerzo le ha requerido alcanzar su objetivo en esta web?</b>\n</div>\n</html>");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 18;
+        gridBagConstraints.insets = new java.awt.Insets(10, 0, 0, 0);
+        jPanel2.add(jLabel13, gridBagConstraints);
+
+        buttonGroup2.add(jRadioButton1);
+        jRadioButton1.setForeground(new java.awt.Color(0, 0, 0));
+        jRadioButton1.setText("1");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 100, 0, 0);
+        jPanel2.add(jRadioButton1, gridBagConstraints);
+
+        buttonGroup4.add(jRadioButton105);
+        jRadioButton105.setForeground(new java.awt.Color(0, 0, 0));
+        jRadioButton105.setText("1");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridy = 7;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 100, 0, 0);
+        jPanel2.add(jRadioButton105, gridBagConstraints);
+
+        buttonGroup5.add(jRadioButton111);
+        jRadioButton111.setForeground(new java.awt.Color(0, 0, 0));
+        jRadioButton111.setText("1");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridy = 9;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 100, 0, 0);
+        jPanel2.add(jRadioButton111, gridBagConstraints);
+
+        buttonGroup6.add(jRadioButton109);
+        jRadioButton109.setForeground(new java.awt.Color(0, 0, 0));
+        jRadioButton109.setText("1");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridy = 11;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 100, 0, 0);
+        jPanel2.add(jRadioButton109, gridBagConstraints);
+
+        buttonGroup7.add(jRadioButton112);
+        jRadioButton112.setForeground(new java.awt.Color(0, 0, 0));
+        jRadioButton112.setText("1");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridy = 13;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 100, 0, 0);
+        jPanel2.add(jRadioButton112, gridBagConstraints);
+
+        buttonGroup8.add(jRadioButton121);
+        jRadioButton121.setForeground(new java.awt.Color(0, 0, 0));
+        jRadioButton121.setText("1");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridy = 15;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 100, 0, 0);
+        jPanel2.add(jRadioButton121, gridBagConstraints);
+
+        buttonGroup10.add(jRadioButton13);
+        jRadioButton13.setForeground(new java.awt.Color(0, 0, 0));
+        jRadioButton13.setText("1");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridy = 19;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 100, 0, 0);
+        jPanel2.add(jRadioButton13, gridBagConstraints);
+
+        buttonGroup9.add(jRadioButton14);
+        jRadioButton14.setForeground(new java.awt.Color(0, 0, 0));
+        jRadioButton14.setText("1");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridy = 17;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 100, 0, 0);
+        jPanel2.add(jRadioButton14, gridBagConstraints);
+
+        buttonGroup4.add(jRadioButton12);
+        jRadioButton12.setForeground(new java.awt.Color(0, 0, 0));
+        jRadioButton12.setText("2");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 7;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 200, 0, 0);
+        jPanel2.add(jRadioButton12, gridBagConstraints);
+
+        buttonGroup5.add(jRadioButton16);
+        jRadioButton16.setForeground(new java.awt.Color(0, 0, 0));
+        jRadioButton16.setText("2");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 9;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 200, 0, 0);
+        jPanel2.add(jRadioButton16, gridBagConstraints);
+
+        buttonGroup6.add(jRadioButton17);
+        jRadioButton17.setForeground(new java.awt.Color(0, 0, 0));
+        jRadioButton17.setText("2");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 11;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 200, 0, 0);
+        jPanel2.add(jRadioButton17, gridBagConstraints);
+
+        buttonGroup7.add(jRadioButton18);
+        jRadioButton18.setForeground(new java.awt.Color(0, 0, 0));
+        jRadioButton18.setText("2");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 13;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 200, 0, 0);
+        jPanel2.add(jRadioButton18, gridBagConstraints);
+
+        buttonGroup8.add(jRadioButton19);
+        jRadioButton19.setForeground(new java.awt.Color(0, 0, 0));
+        jRadioButton19.setText("2");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 15;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 200, 0, 0);
+        jPanel2.add(jRadioButton19, gridBagConstraints);
+
+        buttonGroup9.add(jRadioButton20);
+        jRadioButton20.setForeground(new java.awt.Color(0, 0, 0));
+        jRadioButton20.setText("2");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 17;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 200, 0, 0);
+        jPanel2.add(jRadioButton20, gridBagConstraints);
+
+        buttonGroup10.add(jRadioButton21);
+        jRadioButton21.setForeground(new java.awt.Color(0, 0, 0));
+        jRadioButton21.setText("2");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 19;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 200, 0, 0);
+        jPanel2.add(jRadioButton21, gridBagConstraints);
+
+        buttonGroup3.add(jRadioButton7);
+        jRadioButton7.setForeground(new java.awt.Color(0, 0, 0));
+        jRadioButton7.setText("2");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 5;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 200, 0, 0);
+        jPanel2.add(jRadioButton7, gridBagConstraints);
+
+        buttonGroup2.add(jRadioButton23);
+        jRadioButton23.setForeground(new java.awt.Color(0, 0, 0));
+        jRadioButton23.setText("2");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 200, 0, 0);
+        jPanel2.add(jRadioButton23, gridBagConstraints);
+
+        buttonGroup4.add(jRadioButton24);
+        jRadioButton24.setForeground(new java.awt.Color(0, 0, 0));
+        jRadioButton24.setText("3");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 7;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 300, 0, 0);
+        jPanel2.add(jRadioButton24, gridBagConstraints);
+
+        buttonGroup5.add(jRadioButton25);
+        jRadioButton25.setForeground(new java.awt.Color(0, 0, 0));
+        jRadioButton25.setText("3");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 9;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 300, 0, 0);
+        jPanel2.add(jRadioButton25, gridBagConstraints);
+
+        buttonGroup6.add(jRadioButton26);
+        jRadioButton26.setForeground(new java.awt.Color(0, 0, 0));
+        jRadioButton26.setText("3");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 11;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 300, 0, 0);
+        jPanel2.add(jRadioButton26, gridBagConstraints);
+
+        buttonGroup7.add(jRadioButton27);
+        jRadioButton27.setForeground(new java.awt.Color(0, 0, 0));
+        jRadioButton27.setText("3");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 13;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 300, 0, 0);
+        jPanel2.add(jRadioButton27, gridBagConstraints);
+
+        buttonGroup8.add(jRadioButton28);
+        jRadioButton28.setForeground(new java.awt.Color(0, 0, 0));
+        jRadioButton28.setText("3");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 15;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 300, 0, 0);
+        jPanel2.add(jRadioButton28, gridBagConstraints);
+
+        buttonGroup9.add(jRadioButton29);
+        jRadioButton29.setForeground(new java.awt.Color(0, 0, 0));
+        jRadioButton29.setText("3");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 17;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 300, 0, 0);
+        jPanel2.add(jRadioButton29, gridBagConstraints);
+
+        buttonGroup10.add(jRadioButton30);
+        jRadioButton30.setForeground(new java.awt.Color(0, 0, 0));
+        jRadioButton30.setText("3");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 19;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 300, 0, 0);
+        jPanel2.add(jRadioButton30, gridBagConstraints);
+
+        buttonGroup1.add(jRadioButton31);
+        jRadioButton31.setForeground(new java.awt.Color(0, 0, 0));
+        jRadioButton31.setText("3");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 300, 0, 0);
+        jPanel2.add(jRadioButton31, gridBagConstraints);
+
+        buttonGroup2.add(jRadioButton3);
+        jRadioButton3.setForeground(new java.awt.Color(0, 0, 0));
+        jRadioButton3.setText("3");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 300, 0, 0);
+        jPanel2.add(jRadioButton3, gridBagConstraints);
+
+        buttonGroup5.add(jRadioButton33);
+        jRadioButton33.setForeground(new java.awt.Color(0, 0, 0));
+        jRadioButton33.setText("4");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 9;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 400, 0, 0);
+        jPanel2.add(jRadioButton33, gridBagConstraints);
+
+        buttonGroup4.add(jRadioButton34);
+        jRadioButton34.setForeground(new java.awt.Color(0, 0, 0));
+        jRadioButton34.setText("4");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 7;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 400, 0, 0);
+        jPanel2.add(jRadioButton34, gridBagConstraints);
+
+        buttonGroup6.add(jRadioButton35);
+        jRadioButton35.setForeground(new java.awt.Color(0, 0, 0));
+        jRadioButton35.setText("4");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 11;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 400, 0, 0);
+        jPanel2.add(jRadioButton35, gridBagConstraints);
+
+        buttonGroup7.add(jRadioButton36);
+        jRadioButton36.setForeground(new java.awt.Color(0, 0, 0));
+        jRadioButton36.setText("4");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 13;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 400, 0, 0);
+        jPanel2.add(jRadioButton36, gridBagConstraints);
+
+        buttonGroup8.add(jRadioButton37);
+        jRadioButton37.setForeground(new java.awt.Color(0, 0, 0));
+        jRadioButton37.setText("4");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 15;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 400, 0, 0);
+        jPanel2.add(jRadioButton37, gridBagConstraints);
+
+        buttonGroup9.add(jRadioButton38);
+        jRadioButton38.setForeground(new java.awt.Color(0, 0, 0));
+        jRadioButton38.setText("4");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 17;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 400, 0, 0);
+        jPanel2.add(jRadioButton38, gridBagConstraints);
+
+        buttonGroup10.add(jRadioButton39);
+        jRadioButton39.setForeground(new java.awt.Color(0, 0, 0));
+        jRadioButton39.setText("4");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 19;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 400, 0, 0);
+        jPanel2.add(jRadioButton39, gridBagConstraints);
+
+        buttonGroup1.add(jRadioButton40);
+        jRadioButton40.setForeground(new java.awt.Color(0, 0, 0));
+        jRadioButton40.setText("4");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 400, 0, 0);
+        jPanel2.add(jRadioButton40, gridBagConstraints);
+
+        buttonGroup2.add(jRadioButton4);
+        jRadioButton4.setForeground(new java.awt.Color(0, 0, 0));
+        jRadioButton4.setText("4");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 400, 0, 0);
+        jPanel2.add(jRadioButton4, gridBagConstraints);
+
+        buttonGroup4.add(jRadioButton42);
+        jRadioButton42.setForeground(new java.awt.Color(0, 0, 0));
+        jRadioButton42.setText("5");
+        jRadioButton42.setToolTipText("");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 7;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 500, 0, 0);
+        jPanel2.add(jRadioButton42, gridBagConstraints);
+
+        buttonGroup5.add(jRadioButton43);
+        jRadioButton43.setForeground(new java.awt.Color(0, 0, 0));
+        jRadioButton43.setText("5");
+        jRadioButton43.setToolTipText("");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 9;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 500, 0, 0);
+        jPanel2.add(jRadioButton43, gridBagConstraints);
+
+        buttonGroup6.add(jRadioButton44);
+        jRadioButton44.setForeground(new java.awt.Color(0, 0, 0));
+        jRadioButton44.setText("5");
+        jRadioButton44.setToolTipText("");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 11;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 500, 0, 0);
+        jPanel2.add(jRadioButton44, gridBagConstraints);
+
+        buttonGroup7.add(jRadioButton45);
+        jRadioButton45.setForeground(new java.awt.Color(0, 0, 0));
+        jRadioButton45.setText("5");
+        jRadioButton45.setToolTipText("");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 13;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 500, 0, 0);
+        jPanel2.add(jRadioButton45, gridBagConstraints);
+
+        buttonGroup8.add(jRadioButton46);
+        jRadioButton46.setForeground(new java.awt.Color(0, 0, 0));
+        jRadioButton46.setText("5");
+        jRadioButton46.setToolTipText("");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 15;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 500, 0, 0);
+        jPanel2.add(jRadioButton46, gridBagConstraints);
+
+        buttonGroup9.add(jRadioButton47);
+        jRadioButton47.setForeground(new java.awt.Color(0, 0, 0));
+        jRadioButton47.setText("5");
+        jRadioButton47.setToolTipText("");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 17;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 500, 0, 0);
+        jPanel2.add(jRadioButton47, gridBagConstraints);
+
+        buttonGroup10.add(jRadioButton48);
+        jRadioButton48.setForeground(new java.awt.Color(0, 0, 0));
+        jRadioButton48.setText("5");
+        jRadioButton48.setToolTipText("");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 19;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 500, 0, 0);
+        jPanel2.add(jRadioButton48, gridBagConstraints);
+
+        buttonGroup1.add(jRadioButton49);
+        jRadioButton49.setForeground(new java.awt.Color(0, 0, 0));
+        jRadioButton49.setText("5");
+        jRadioButton49.setToolTipText("");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 500, 0, 0);
+        jPanel2.add(jRadioButton49, gridBagConstraints);
+
+        buttonGroup2.add(jRadioButton5);
+        jRadioButton5.setForeground(new java.awt.Color(0, 0, 0));
+        jRadioButton5.setText("5");
+        jRadioButton5.setToolTipText("");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 500, 0, 0);
+        jPanel2.add(jRadioButton5, gridBagConstraints);
+
+        buttonGroup3.add(jRadioButton11);
+        jRadioButton11.setForeground(new java.awt.Color(0, 0, 0));
+        jRadioButton11.setText("1");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 5;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 100, 0, 0);
+        jPanel2.add(jRadioButton11, gridBagConstraints);
+
+        jLabel1.setText("<html>\n<div style='width: 480px; font-family: Arial; color: #003384; font-size: 13px; margin-top: 10px; margin-bottom: 3px;'>\n  <b>¿Tiene alguna sugerencia u opinión adicional para mejorar esta plataforma? (Opcional):</b>\n</div>\n</html>");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridy = 20;
+        jPanel2.add(jLabel1, gridBagConstraints);
+
+        jTextField1.setBackground(new java.awt.Color(204, 204, 204));
+        jTextField1.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField1.setPreferredSize(new java.awt.Dimension(500, 100));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridy = 21;
+        jPanel2.add(jTextField1, gridBagConstraints);
+
+        FinalizarEncuesta.setBackground(java.awt.SystemColor.activeCaption);
+        FinalizarEncuesta.setText("<html>\n  <b style='font-family: Arial; font-size: 16px; color: #FFFFFF;'>Finalizar Encuesta</b>\n</html>");
+        FinalizarEncuesta.addActionListener(this::FinalizarEncuestaActionPerformed);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridy = 22;
+        gridBagConstraints.insets = new java.awt.Insets(20, 0, 0, 0);
+        jPanel2.add(FinalizarEncuesta, gridBagConstraints);
 
         jScrollPane1.setViewportView(jPanel2);
 
@@ -163,19 +773,128 @@ public class TuOpinion extends javax.swing.JPanel {
         add(centralPanel, gridBagConstraints);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void FinalizarEncuestaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FinalizarEncuestaActionPerformed
+    // 1. VALIDACIÓN: Comprobar que las 10 preguntas tengan una opción marcada
+        // Cambia 'buttonGroupP1', 'buttonGroupP2', etc., por los nombres reales de tus ButtonGroups
+        if (buttonGroup1.getSelection() == null || 
+            buttonGroup2.getSelection() == null || 
+            buttonGroup3.getSelection() == null || 
+            buttonGroup4.getSelection() == null || 
+            buttonGroup5.getSelection() == null || 
+            buttonGroup6.getSelection() == null || 
+            buttonGroup7.getSelection() == null || 
+            buttonGroup8.getSelection() == null || 
+            buttonGroup9.getSelection() == null || 
+            buttonGroup10.getSelection() == null) {
+
+            // Mensaje de error elegante si falta alguna por responder
+            javax.swing.JOptionPane.showMessageDialog(this, 
+                "<html><b style='color: #C0392B; font-family: Arial; font-size: 13px;'>Encuesta Incompleta</b><br>"
+                + "<span style='font-family: Arial; font-size: 12px; color: #555555;'>"
+                + "Por favor, responda a las 10 preguntas obligatorias antes de finalizar la encuesta.</span></html>", 
+                "Atención - Policía Nacional", 
+                javax.swing.JOptionPane.WARNING_MESSAGE);
+
+            return; // Ponemos este return para que el código SE DETENGA AQUÍ y no envíe nada
+        }
+
+        // 2. Si pasa la validación, mostramos el mensaje de éxito
+        javax.swing.JOptionPane.showMessageDialog(this, 
+            "<html><b style='color:#003384; font-family: Arial; font-size: 13px;'>¡Muchas gracias por su colaboración!</b><br>"
+            + "<span style='font-family: Arial; font-size: 12px; color: #555555;'>"
+            + "Sus respuestas nos ayudan a mejorar la usabilidad de la plataforma.</span></html>", 
+            "Encuesta Finalizada", 
+            javax.swing.JOptionPane.INFORMATION_MESSAGE);
+
+        // 3. Ejecutamos el cambio de pantalla que corregimos antes
+        javax.swing.JPanel contenedor = (javax.swing.JPanel) this.getParent();
+        controllers.PageController control = new controllers.PageController(contenedor, controllers.PageController.LANDING);
+        control.actionPerformed(new java.awt.event.ActionEvent(evt.getSource(), java.awt.event.ActionEvent.ACTION_PERFORMED, ""));
+    }//GEN-LAST:event_FinalizarEncuestaActionPerformed
+
+    private void jRadioButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton8ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton FinalizarEncuesta;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup buttonGroup10;
+    private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.ButtonGroup buttonGroup3;
+    private javax.swing.ButtonGroup buttonGroup4;
+    private javax.swing.ButtonGroup buttonGroup5;
+    private javax.swing.ButtonGroup buttonGroup6;
+    private javax.swing.ButtonGroup buttonGroup7;
+    private javax.swing.ButtonGroup buttonGroup8;
+    private javax.swing.ButtonGroup buttonGroup9;
     private javax.swing.JPanel centralPanel;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JRadioButton jRadioButton10;
+    private javax.swing.JRadioButton jRadioButton102;
+    private javax.swing.JRadioButton jRadioButton105;
+    private javax.swing.JRadioButton jRadioButton109;
+    private javax.swing.JRadioButton jRadioButton11;
+    private javax.swing.JRadioButton jRadioButton111;
+    private javax.swing.JRadioButton jRadioButton112;
+    private javax.swing.JRadioButton jRadioButton12;
+    private javax.swing.JRadioButton jRadioButton121;
+    private javax.swing.JRadioButton jRadioButton13;
+    private javax.swing.JRadioButton jRadioButton14;
+    private javax.swing.JRadioButton jRadioButton16;
+    private javax.swing.JRadioButton jRadioButton17;
+    private javax.swing.JRadioButton jRadioButton18;
+    private javax.swing.JRadioButton jRadioButton19;
+    private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.JRadioButton jRadioButton20;
+    private javax.swing.JRadioButton jRadioButton21;
+    private javax.swing.JRadioButton jRadioButton23;
+    private javax.swing.JRadioButton jRadioButton24;
+    private javax.swing.JRadioButton jRadioButton25;
+    private javax.swing.JRadioButton jRadioButton26;
+    private javax.swing.JRadioButton jRadioButton27;
+    private javax.swing.JRadioButton jRadioButton28;
+    private javax.swing.JRadioButton jRadioButton29;
     private javax.swing.JRadioButton jRadioButton3;
+    private javax.swing.JRadioButton jRadioButton30;
+    private javax.swing.JRadioButton jRadioButton31;
+    private javax.swing.JRadioButton jRadioButton33;
+    private javax.swing.JRadioButton jRadioButton34;
+    private javax.swing.JRadioButton jRadioButton35;
+    private javax.swing.JRadioButton jRadioButton36;
+    private javax.swing.JRadioButton jRadioButton37;
+    private javax.swing.JRadioButton jRadioButton38;
+    private javax.swing.JRadioButton jRadioButton39;
     private javax.swing.JRadioButton jRadioButton4;
+    private javax.swing.JRadioButton jRadioButton40;
+    private javax.swing.JRadioButton jRadioButton42;
+    private javax.swing.JRadioButton jRadioButton43;
+    private javax.swing.JRadioButton jRadioButton44;
+    private javax.swing.JRadioButton jRadioButton45;
+    private javax.swing.JRadioButton jRadioButton46;
+    private javax.swing.JRadioButton jRadioButton47;
+    private javax.swing.JRadioButton jRadioButton48;
+    private javax.swing.JRadioButton jRadioButton49;
     private javax.swing.JRadioButton jRadioButton5;
-    private javax.swing.JRadioButton jRadioButton6;
+    private javax.swing.JRadioButton jRadioButton7;
+    private javax.swing.JRadioButton jRadioButton8;
+    private javax.swing.JRadioButton jRadioButton9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel textoIzq;
     private javax.swing.JLabel title;
     // End of variables declaration//GEN-END:variables

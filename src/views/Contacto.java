@@ -45,6 +45,11 @@ public class Contacto extends javax.swing.JPanel {
         title = new javax.swing.JLabel();
         textoIzq = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        txtMensaje = new javax.swing.JTextField();
+        AdjuntarArchivo = new javax.swing.JButton();
+        EnviarMensaje = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setForeground(new java.awt.Color(255, 255, 255));
@@ -81,6 +86,46 @@ public class Contacto extends javax.swing.JPanel {
         gridBagConstraints.gridy = 3;
         centralPanel.add(jLabel1, gridBagConstraints);
 
+        jLabel2.setText("<html>\n<div style='font-family: Arial; font-size: 13px; color: #003384; margin-bottom: 3px;'>\n  <b>Escriba su consulta o reclamación detallada:</b>\n</div>\n</html>");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.insets = new java.awt.Insets(20, 0, 0, 0);
+        centralPanel.add(jLabel2, gridBagConstraints);
+
+        txtMensaje.setBackground(new java.awt.Color(204, 204, 204));
+        txtMensaje.setPreferredSize(new java.awt.Dimension(500, 100));
+        txtMensaje.addActionListener(this::txtMensajeActionPerformed);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridy = 4;
+        centralPanel.add(txtMensaje, gridBagConstraints);
+
+        AdjuntarArchivo.setBackground(new java.awt.Color(204, 204, 204));
+        AdjuntarArchivo.setForeground(new java.awt.Color(0, 0, 0));
+        AdjuntarArchivo.setText("Adjuntar archivo");
+        AdjuntarArchivo.addActionListener(this::AdjuntarArchivoActionPerformed);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridy = 5;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(15, 200, 0, 0);
+        centralPanel.add(AdjuntarArchivo, gridBagConstraints);
+
+        EnviarMensaje.setBackground(java.awt.SystemColor.activeCaption);
+        EnviarMensaje.setForeground(new java.awt.Color(255, 255, 255));
+        EnviarMensaje.setText("Enviar mensaje");
+        EnviarMensaje.addActionListener(this::EnviarMensajeActionPerformed);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 5;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(15, 350, 0, 0);
+        centralPanel.add(EnviarMensaje, gridBagConstraints);
+
+        jLabel3.setForeground(new java.awt.Color(231, 240, 247));
+        jLabel3.setText("jLabel3");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridy = 6;
+        centralPanel.add(jLabel3, gridBagConstraints);
+
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
@@ -88,11 +133,54 @@ public class Contacto extends javax.swing.JPanel {
         add(centralPanel, gridBagConstraints);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void txtMensajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMensajeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtMensajeActionPerformed
+
+    private void AdjuntarArchivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdjuntarArchivoActionPerformed
+        javax.swing.JFileChooser buscador = new javax.swing.JFileChooser();
+        int seleccion = buscador.showOpenDialog(this);
+
+        if (seleccion == javax.swing.JFileChooser.APPROVE_OPTION) {
+            java.io.File archivo = buscador.getSelectedFile();
+        }
+    }//GEN-LAST:event_AdjuntarArchivoActionPerformed
+
+    private void EnviarMensajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EnviarMensajeActionPerformed
+        String mensaje = txtMensaje.getText().trim();
+
+        if (mensaje.isEmpty() || mensaje.equals("Escriba su consulta o reclamación detallada:")) {
+
+            javax.swing.JOptionPane.showMessageDialog(this,
+                "<html><b style='color: #C0392B; font-family: Arial; font-size: 13px;'>Formulario Incompleto:</b><br>"
+                + "<span style='font-family: Arial; font-size: 12px; color: #555555;'>"
+                + "Por favor, rellene tanto el asunto como el cuerpo del mensaje antes de realizar el envío.</span></html>",
+                "Atención - Policía Nacional",
+                javax.swing.JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        javax.swing.JOptionPane.showMessageDialog(this,
+            "<html><b style='color: #003384; font-family: Arial; font-size: 13px;'>Consulta Registrada Correctamente</b><br>"
+            + "<span style='font-family: Arial; font-size: 12px; color: #555555;'>"
+            + "Su mensaje y documentación adjunta han sido enviados al Servicio de Atención al Ciudadano.<br>"
+            + "Recibirá una respuesta en su correo electrónico en un plazo máximo de 48 horas.</span></html>",
+            "Envío Exitoso",
+            javax.swing.JOptionPane.INFORMATION_MESSAGE);
+
+        txtMensaje.setText("");
+    }//GEN-LAST:event_EnviarMensajeActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton AdjuntarArchivo;
+    private javax.swing.JButton EnviarMensaje;
     private javax.swing.JPanel centralPanel;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel textoIzq;
     private javax.swing.JLabel title;
+    private javax.swing.JTextField txtMensaje;
     // End of variables declaration//GEN-END:variables
 }
