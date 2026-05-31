@@ -16,6 +16,9 @@ import views.FormDNI;
 import views.FormDNIOlvidado;
 import views.FormNIE;
 import views.Landing;
+import views.Ayuda;
+import views.Contacto;
+import views.TuOpinion;
 
 /**
  *
@@ -59,6 +62,9 @@ public class PageController implements ActionListener {
             case FORMDNI -> FormDNI.getInstance();
             case FORMNIE -> FormNIE.getInstance();
             case FORMDNI_OLVIDADO -> FormDNIOlvidado.getInstance();
+            case AYUDA -> Ayuda.getInstance();
+            case CONTACTO -> Contacto.getInstance();
+            case TU_OPINION -> TuOpinion.getInstance();
                 //case 3 -> PanelCita.getInstance();
             default -> Landing.getInstance();
         };
