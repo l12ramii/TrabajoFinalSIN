@@ -44,3 +44,81 @@ Para distribuir esta aplicación a otros usuarios o equipos:
     * Haga clic derecho en el proyecto en NetBeans > **Properties**.
     * Vaya a **Run** y especifique la clase en el campo **Main Class**.
     * También puede editarse manualmente en el elemento `Main-Class` del archivo `MANIFEST.MF`.
+
+## Estructura del ptoyecto
+# Proyecto
+
+## 📁 Estructura del proyecto
+
+```
+src/
+├── components/              # Componentes reutilizables de UI
+│   ├── Footer.form
+│   ├── Footer.java
+│   ├── Header.form
+│   └── Header.java
+│
+├── controllers/             # Lógica de control y navegación
+│   └── PageController.java
+│
+├── images/                  # Recursos gráficos
+│   ├── bandera-catalunya.png
+│   ├── bandera-spain.png
+│   ├── bandera-uk.png
+│   ├── correcto.png
+│   ├── dni-ejemplo-1.jpg
+│   ├── dni-ejemplo-2.png
+│   ├── nie-ejemplo-1.jpg
+│   ├── policia-log-2.png
+│   └── policia-logo-1.png
+│
+├── main/                    # Punto de entrada de la aplicación
+│   ├── java/
+│   │   ├── components/
+│   │   ├── controllers/
+│   │   ├── models/
+│   │   ├── utils/
+│   │   └── views/
+│   ├── Main.form
+│   ├── Main.java
+│   └── resources/
+│
+├── resources/               # Internacionalización (i18n)
+│   ├── Bundle_ca_ES.properties
+│   ├── Bundle_en_GB.properties
+│   └── Bundle_es_ES.properties
+│
+├── utils/                   # Clases de utilidad
+│   └── Utils.java
+│
+└── views/                   # Vistas de la aplicación
+    ├── Acceso.form / Acceso.java
+    ├── Ayuda.form / Ayuda.java
+    ├── Contacto.form / Contacto.java
+    ├── FormDNI.form / FormDNI.java
+    ├── FormDNIOlvidado.form / FormDNIOlvidado.java
+    ├── FormNIE.form / FormNIE.java
+    ├── Internationalization.java
+    ├── Landing.form / Landing.java
+    └── TuOpinion.form / TuOpinion.java
+```
+
+## 🗂️ Descripción de módulos
+
+| Carpeta | Descripción |
+|---|---|
+| `components/` | Cabecera y pie de página reutilizables en todas las vistas |
+| `controllers/` | Controlador principal de navegación entre páginas |
+| `images/` | Banderas, logos e imágenes de ejemplo para DNI/NIE |
+| `main/` | Clase principal y estructura base del proyecto |
+| `resources/` | Ficheros de traducción para español, catalán e inglés |
+| `utils/` | Métodos auxiliares compartidos |
+| `views/` | Pantallas de la aplicación (acceso, formularios, ayuda, etc.) |
+
+## 🌍 Idiomas soportados
+
+| Código | Idioma |
+|---|---|
+| `es_ES` | Español |
+| `ca_ES` | Catalán |
+| `en_GB` | Inglés |
