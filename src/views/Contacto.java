@@ -13,7 +13,7 @@ import utils.Utils;
  *
  * @author adolfo
  */
-public class Contacto extends javax.swing.JPanel {
+public class Contacto extends javax.swing.JPanel implements Internationalization {
 
     private static Contacto instance;
 
@@ -189,7 +189,16 @@ public class Contacto extends javax.swing.JPanel {
 
     private void txtMensajeActionPerformed(java.awt.event.ActionEvent evt) {                                           
         // TODO add your handling code here:
-    }                                          
+    }
+
+       @Override
+    public void actualizarTextos(ResourceBundle bundle) {
+        title.setText(bundle.getString("CONTACTO_TITULO"));
+        textoIzq.setText(bundle.getString("CONTACTO_INFO"));
+        jLabel2.setText(bundle.getString("CONTACTO_PROMPT"));
+        AdjuntarArchivo.setText(bundle.getString("CONTACTO_BTN_ADJUNTAR"));
+        EnviarMensaje.setText(bundle.getString("CONTACTO_BTN_ENVIAR"));
+    }
 
 
     // Variables declaration - do not modify                     
