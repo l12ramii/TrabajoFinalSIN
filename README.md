@@ -46,9 +46,6 @@ Para distribuir esta aplicación a otros usuarios o equipos:
     * También puede editarse manualmente en el elemento `Main-Class` del archivo `MANIFEST.MF`.
 
 ## Estructura del ptoyecto
-# Proyecto
-
-## 📁 Estructura del proyecto
 
 ```
 src/
@@ -103,7 +100,7 @@ src/
     └── TuOpinion.form / TuOpinion.java
 ```
 
-## 🗂️ Descripción de módulos
+## Descripción de módulos
 
 | Carpeta | Descripción |
 |---|---|
@@ -115,7 +112,7 @@ src/
 | `utils/` | Métodos auxiliares compartidos |
 | `views/` | Pantallas de la aplicación (acceso, formularios, ayuda, etc.) |
 
-## 🌍 Idiomas soportados
+## Idiomas soportados
 
 | Código | Idioma |
 |---|---|
